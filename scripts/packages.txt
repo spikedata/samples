@@ -1,3 +1,4 @@
 # NOTE: must be in build order
+samples/pdf-cli
 samples/sample-simple-ts
 samples/sample-web
