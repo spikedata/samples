@@ -1,0 +1,10 @@
+"file","type","code","parser","numTransactions","numBreaks","accountNumber","issuedOn","from","to","nameAddress","detected","flags"
+"user1/absa.2017-01.pdf","2","pdf/success/bank-statement-normal","ABSA_ACTIVESAVE_ALL_0","26","","9217334673","2017-02-11T00:00:00.000Z","2017-01-01T00:00:00.000Z","2017-01-31T00:00:00.000Z","MR I COPELYN
+20 SYDNEY STREET
+GREEN POINT
+8005","",""
+"user2/FNB PRIVATE CLIENTS CHEQUE ACCOU 72.pdf","2","pdf/success/bank-statement-normal","FNB_RETAIL_ALL_0","241","","62018537805","2016-04-26T00:00:00.000Z","2016-01-27T00:00:00.000Z","2016-04-26T00:00:00.000Z","MR SIMON E RHODES
+14 GARDENS RD
+GORDON'S BAY
+7140","",""
+"user3/statement-27-047-616-4.pdf","2","pdf/success/bank-statement-normal","STANDARDBANK_STATEMENT2","210","","27-047-616-4","2018-09-10T00:00:00.000Z","2018-07-01T00:00:00.000Z","2018-09-01T00:00:00.000Z","ENDPOST  PRODUCTION","",""

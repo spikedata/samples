@@ -1,0 +1,41 @@
+{
+  "name": "@spike/pdf-cli",
+  "version": "1.16.0",
+  "description": "Spike cli app to find and process pdfs using the Spike API",
+  "main": "src/app.js",
+  "homepage": "https://spikedata.co.za",
+  "author": "ilan@spikedata.co.za",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spikedata/samples"
+  },
+  "license": "MIT",
+  "keywords": [
+    "spike",
+    "pdf",
+    "south africa",
+    "bank",
+    "statements"
+  ],
+  "scripts": {
+    "build": "run-s clean && run-p build:*",
+    "build:cli": "rsync src/cli.js dist/",
+    "build:app": "./scripts/build.sh",
+    "fix": "run-s fix:*",
+    "fix:prettier": "prettier \"{src,test}/**/*.{js,cjs,mjs,ts}\" --write",
+    "fix:lint": "eslint \"{src,test}/**/*.{js,cjs,mjs,ts}\" --quiet --fix",
+    "clean": "trash dist",
+    "pre-publish": "run-s build test",
+    "test": "./test/pdf-cli-test.sh"
+  },
+  "bin": {
+    "spike-pdf-cli": "dist/cli.js",
+    "spike-pdf-cli-update": "scripts/update.bat"
+  },
+  "files": [
+    "dist/",
+    "scripts/"
+  ],
+  "dependencies:note": "see workspace/package.json",
+  "devDependencies:note": "see workspace/package.json"
+}

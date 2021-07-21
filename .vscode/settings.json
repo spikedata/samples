@@ -1,0 +1,53 @@
+{
+  "debug.javascript.usePreview": true,
+  "debug.javascript.autoAttachFilter": "onlyWithFlag",
+  // create vs-debugger traces
+  //  - check `debug console` for file output location
+  //  - and https://microsoft.github.io/vscode-pwa-analyzer/index.html to see what's in the trace
+  // "debug.javascript.terminalOptions": {
+  //   "trace": true
+  // },
+  "editor.codeActionsOnSave": { "source.fixAll.eslint": true },
+  "editor.formatOnSave": true,
+  // "editor.rulers": [100],
+  // "editor.wordWrap": "wordWrapColumn",
+  // "editor.wordWrapColumn": 100,
+  "eslint.validate": ["javascript", { "language": "typescript", "autoFix": true }],
+  "eslint.packageManager": "yarn",
+  "prettier.eslintIntegration": true,
+  // "prettier.proseWrap": "always",
+  // "prettier.proseWrap": "never",
+  // "prettier.proseWrap": "preserve",
+  // "prettier.printWidth": 2000,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    // "editor.wordWrap": "wordWrapColumn",
+    "editor.quickSuggestions": false,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    // "editor.defaultFormatter": "darkriszty.markdown-table-prettify"
+  },
+  "markdown-preview-enhanced.automaticallyShowPreviewOfMarkdownBeingEdited": false,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    // "editor.formatOnSave": false
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/dist": true,
+    "**/coverage": true
+  },
+  // use local typescript version
+  "typescript.tsdk": "node_modules/typescript/lib",
+  // "typescript.implementationsCodeLens.enabled": true,
+  "typescript.referencesCodeLens.enabled": true
+}

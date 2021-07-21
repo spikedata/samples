@@ -1,0 +1,20 @@
+{
+  "name": "@spike/sample-simple-ts",
+  "version": "1.2.0",
+  "description": "Spike API sample with typescript intellisense",
+  "main": "build/app.js",
+  "author": "ilan@spikedata.co.za",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spikedata/samples"
+  },
+  "scripts": {
+    "start": "ts-node src/app.ts",
+    "clean": "rm -rf dist build package",
+    "build": "yarn clean && yarn build:tsc",
+    "build:tsc": "tsc -p tsconfig.json"
+  },
+  "dependencies:note": "see workspace/package.json",
+  "devDependencies:note": "see workspace/package.json"
+}

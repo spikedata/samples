@@ -1,0 +1,3 @@
+# NOTE: must be in build order
+samples/sample-simple-ts
+samples/sample-web

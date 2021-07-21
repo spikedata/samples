@@ -1,0 +1,9 @@
+# /node_modules/* is ignored by default
+# build artefacts
+**/build/*
+**/dist/*
+**/coverage/*
+# data definition files
+**/*.d.ts
+# custom definition files
+**/src/types/

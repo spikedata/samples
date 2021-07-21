@@ -1,0 +1,1978 @@
+{
+  "requestId": "00000000-0000-4000-a000-000000000001",
+  "code": "pdf/success/bank-statement-normal",
+  "type": 2,
+  "data": {
+    "parser": "STANDARDBANK_STATEMENT2",
+    "statement": {
+      "bank": "STD",
+      "accountNumber": "27-047-616-4",
+      "dates": {
+        "issuedOn": "2018-09-10T00:00:00.000Z",
+        "from": "2018-07-01T00:00:00.000Z",
+        "to": "2018-09-01T00:00:00.000Z"
+      },
+      "nameAddress": [
+        "ENDPOST  PRODUCTION"
+      ]
+    },
+    "transactions": [
+      {
+        "date": "2018-07-02T00:00:00.000Z",
+        "description": [
+          "WOOLWORTHS 11H30 226116575 - debit card purchase"
+        ],
+        "amount": -477.87,
+        "balance": 33447.37,
+        "id": 1
+      },
+      {
+        "date": "2018-07-02T00:00:00.000Z",
+        "description": [
+          "BP SUPER SERVI14H23 226116575 - debit card purchase"
+        ],
+        "amount": -200,
+        "balance": 33247.37,
+        "id": 2
+      },
+      {
+        "date": "2018-07-02T00:00:00.000Z",
+        "description": [
+          "FVC Tokai 14H07 226116575 - debit card purchase"
+        ],
+        "amount": -1584.84,
+        "balance": 31662.53,
+        "id": 3
+      },
+      {
+        "date": "2018-07-02T00:00:00.000Z",
+        "description": [
+          "WOOLWORTHS 11H30 226116575 ## - debit card",
+          "purchase fee"
+        ],
+        "amount": -5.85,
+        "balance": 31656.68,
+        "id": 4
+      },
+      {
+        "date": "2018-07-02T00:00:00.000Z",
+        "description": [
+          "BP SUPER SERVI14H23 226116575 ## - debit card",
+          "purchase fee"
+        ],
+        "amount": -5.85,
+        "balance": 31650.83,
+        "id": 5
+      },
+      {
+        "date": "2018-07-02T00:00:00.000Z",
+        "description": [
+          "FVC Tokai 14H07 226116575 ## - debit card purchase fee"
+        ],
+        "amount": -5.85,
+        "balance": 31644.98,
+        "id": 6
+      },
+      {
+        "date": "2018-07-02T00:00:00.000Z",
+        "description": [
+          "LIBLIFE 01JUL58218624100C/P - insurance premium"
+        ],
+        "amount": -1381.47,
+        "balance": 30263.51,
+        "id": 7
+      },
+      {
+        "date": "2018-07-02T00:00:00.000Z",
+        "description": [
+          "TRACKER 00CLI1689920TRC71697 - service agreement"
+        ],
+        "amount": -214.71,
+        "balance": 30048.8,
+        "id": 8
+      },
+      {
+        "date": "2018-07-02T00:00:00.000Z",
+        "description": [
+          "ZESTLIFE GAP5587396 - account payment"
+        ],
+        "amount": -543.71,
+        "balance": 29505.09,
+        "id": 9
+      },
+      {
+        "date": "2018-07-02T00:00:00.000Z",
+        "description": [
+          "SBSA VAF 30027810 0001 02 JUL - account payment"
+        ],
+        "amount": -6907.81,
+        "balance": 22597.28,
+        "id": 10
+      },
+      {
+        "date": "2018-07-02T00:00:00.000Z",
+        "description": [
+          "MULTID FORHETZNER 29109846 - account payment"
+        ],
+        "amount": -105,
+        "balance": 22492.28,
+        "id": 11
+      },
+      {
+        "date": "2018-07-02T00:00:00.000Z",
+        "description": [
+          "AXXESS 42049132 SAGEPAY - service agreement"
+        ],
+        "amount": -2064,
+        "balance": 20428.28,
+        "id": 12
+      },
+      {
+        "date": "2018-07-02T00:00:00.000Z",
+        "description": [
+          "ZESTLIFE MPW0055560 - account payment"
+        ],
+        "amount": -165,
+        "balance": 20263.28,
+        "id": 13
+      },
+      {
+        "date": "2018-07-02T00:00:00.000Z",
+        "description": [
+          "OUTSURANCE OT17413331 UZ3106 - insurance premium"
+        ],
+        "amount": -2889.23,
+        "balance": 17374.05,
+        "id": 14
+      },
+      {
+        "date": "2018-07-02T00:00:00.000Z",
+        "description": [
+          "DISC PREM M5835637 -178147094 - medical aid",
+          "contribution"
+        ],
+        "amount": -3375,
+        "balance": 13999.05,
+        "id": 15
+      },
+      {
+        "date": "2018-07-03T00:00:00.000Z",
+        "description": [
+          "DISCOVERY 4043070435712000 - electronic trf - credit",
+          "card"
+        ],
+        "amount": -1097,
+        "balance": 12902.05,
+        "id": 16
+      },
+      {
+        "date": "2018-07-05T00:00:00.000Z",
+        "description": [
+          "ROSHNI HARALDSEN 261165758 - ib payment"
+        ],
+        "amount": -1500,
+        "balance": 11402.05,
+        "id": 17
+      },
+      {
+        "date": "2018-07-05T00:00:00.000Z",
+        "description": [
+          "Spar Prospur S18H42 261165758 - debit card purchase"
+        ],
+        "amount": -201.99,
+        "balance": 11200.06,
+        "id": 18
+      },
+      {
+        "date": "2018-07-05T00:00:00.000Z",
+        "description": [
+          "Spar Prospur S18H42 261165758 ## - debit card purchase",
+          "fee"
+        ],
+        "amount": -5.85,
+        "balance": 11194.21,
+        "id": 19
+      },
+      {
+        "date": "2018-07-05T00:00:00.000Z",
+        "description": [
+          "TELKOMMOBI50337794101054283841 - telephone account"
+        ],
+        "amount": -220.51,
+        "balance": 10973.7,
+        "id": 20
+      },
+      {
+        "date": "2018-07-06T00:00:00.000Z",
+        "description": [
+          "MTN PREPAID 0824984803 - pre-paid payment"
+        ],
+        "amount": -189,
+        "balance": 10784.7,
+        "id": 21
+      },
+      {
+        "date": "2018-07-06T00:00:00.000Z",
+        "description": [
+          "CARLTON HAIR B15H17 261165758 - debit card purchase"
+        ],
+        "amount": -1619,
+        "balance": 9165.7,
+        "id": 22
+      },
+      {
+        "date": "2018-07-06T00:00:00.000Z",
+        "description": [
+          "270476164 MTN PREPA 0824984803 ## - fee - pre-paid",
+          "top up"
+        ],
+        "amount": -1.11,
+        "balance": 9164.59,
+        "id": 23
+      },
+      {
+        "date": "2018-07-06T00:00:00.000Z",
+        "description": [
+          "CARLTON HAIR B15H17 261165758 ## - debit card",
+          "purchase fee"
+        ],
+        "amount": -5.85,
+        "balance": 9158.74,
+        "id": 24
+      },
+      {
+        "date": "2018-07-07T00:00:00.000Z",
+        "description": [
+          "CheckersHyper 13H00 261165758 - debit card purchase"
+        ],
+        "amount": -1066.34,
+        "balance": 8092.4,
+        "id": 25
+      },
+      {
+        "date": "2018-07-07T00:00:00.000Z",
+        "description": [
+          "MEDIRITE TOKAI12H00 226116575 - debit card purchase"
+        ],
+        "amount": -39.99,
+        "balance": 8052.41,
+        "id": 26
+      },
+      {
+        "date": "2018-07-07T00:00:00.000Z",
+        "description": [
+          "DISCOVERY CREDIT CA 261165758 - ib payment"
+        ],
+        "amount": -100,
+        "balance": 7952.41,
+        "id": 27
+      },
+      {
+        "date": "2018-07-07T00:00:00.000Z",
+        "description": [
+          "MEDIRITE TOKAI12H00 226116575 ## - debit card",
+          "purchase fee"
+        ],
+        "amount": -5.85,
+        "balance": 7946.56,
+        "id": 28
+      },
+      {
+        "date": "2018-07-07T00:00:00.000Z",
+        "description": [
+          "CheckersHyper 13H00 261165758 ## - debit card purchase",
+          "fee"
+        ],
+        "amount": -5.85,
+        "balance": 7940.71,
+        "id": 29
+      },
+      {
+        "date": "2018-07-07T00:00:00.000Z",
+        "description": [
+          "ROSHNI ## - fee: payment confirm - sms"
+        ],
+        "amount": -1.11,
+        "balance": 7939.6,
+        "id": 30
+      },
+      {
+        "date": "2018-07-09T00:00:00.000Z",
+        "description": [
+          "270476164 1306635549 07H34 ## - fee pre paid electricity"
+        ],
+        "amount": -1.31,
+        "balance": 7938.29,
+        "id": 31
+      },
+      {
+        "date": "2018-07-09T00:00:00.000Z",
+        "description": [
+          "BP SUPER SERVI16H31 226116575 - debit card purchase"
+        ],
+        "amount": -173.5,
+        "balance": 7764.79,
+        "id": 32
+      },
+      {
+        "date": "2018-07-09T00:00:00.000Z",
+        "description": [
+          "BLANKO 15H47 226116575 - debit card purchase"
+        ],
+        "amount": -1500,
+        "balance": 6264.79,
+        "id": 33
+      },
+      {
+        "date": "2018-07-09T00:00:00.000Z",
+        "description": [
+          "THURSTYS CAR W11H24 226116575 - debit card",
+          "purchase"
+        ],
+        "amount": -110,
+        "balance": 6154.79,
+        "id": 34
+      },
+      {
+        "date": "2018-07-09T00:00:00.000Z",
+        "description": [
+          "V130786313 06635549501 - pre-paid electricity"
+        ],
+        "amount": -500,
+        "balance": 5654.79,
+        "id": 35
+      },
+      {
+        "date": "2018-07-09T00:00:00.000Z",
+        "description": [
+          "PICK AND SAVE 16H26 261165758 - debit card purchase"
+        ],
+        "amount": -559.8,
+        "balance": 5094.99,
+        "id": 36
+      },
+      {
+        "date": "2018-07-09T00:00:00.000Z",
+        "description": [
+          "EASTLAKE CONVE11H16 226116575 - debit card",
+          "purchase"
+        ],
+        "amount": -130.5,
+        "balance": 4964.49,
+        "id": 37
+      },
+      {
+        "date": "2018-07-09T00:00:00.000Z",
+        "description": [
+          "BP SUPER SERVI11H51 226116575 - debit card purchase"
+        ],
+        "amount": -500,
+        "balance": 4464.49,
+        "id": 38
+      },
+      {
+        "date": "2018-07-09T00:00:00.000Z",
+        "description": [
+          "EASTLAKE CONVE11H19 226116575 - debit card",
+          "purchase"
+        ],
+        "amount": -24.9,
+        "balance": 4439.59,
+        "id": 39
+      },
+      {
+        "date": "2018-07-09T00:00:00.000Z",
+        "description": [
+          "BP SUPER SERVI11H51 226116575 ## - debit card",
+          "purchase fee"
+        ],
+        "amount": -5.85,
+        "balance": 4433.74,
+        "id": 40
+      },
+      {
+        "date": "2018-07-09T00:00:00.000Z",
+        "description": [
+          "EASTLAKE CONVE11H19 226116575 ## - debit card",
+          "purchase fee"
+        ],
+        "amount": -5.85,
+        "balance": 4427.89,
+        "id": 41
+      },
+      {
+        "date": "2018-07-09T00:00:00.000Z",
+        "description": [
+          "BP SUPER SERVI16H31 226116575 ## - debit card",
+          "purchase fee"
+        ],
+        "amount": -5.85,
+        "balance": 4422.04,
+        "id": 42
+      },
+      {
+        "date": "2018-07-09T00:00:00.000Z",
+        "description": [
+          "BLANKO 15H47 226116575 ## - debit card purchase fee"
+        ],
+        "amount": -5.85,
+        "balance": 4416.19,
+        "id": 43
+      },
+      {
+        "date": "2018-07-09T00:00:00.000Z",
+        "description": [
+          "THURSTYS CAR W11H24 226116575 ## - debit card",
+          "purchase fee"
+        ],
+        "amount": -5.85,
+        "balance": 4410.34,
+        "id": 44
+      },
+      {
+        "date": "2018-07-09T00:00:00.000Z",
+        "description": [
+          "PICK AND SAVE 16H26 261165758 ## - debit card",
+          "purchase fee"
+        ],
+        "amount": -5.85,
+        "balance": 4404.49,
+        "id": 45
+      },
+      {
+        "date": "2018-07-09T00:00:00.000Z",
+        "description": [
+          "EASTLAKE CONVE11H16 226116575 ## - debit card",
+          "purchase fee"
+        ],
+        "amount": -5.85,
+        "balance": 4398.64,
+        "id": 46
+      },
+      {
+        "date": "2018-07-10T00:00:00.000Z",
+        "description": [
+          "CJ'S FISH HOU17H44 261165758 - debit card purchase"
+        ],
+        "amount": -118,
+        "balance": 4280.64,
+        "id": 47
+      },
+      {
+        "date": "2018-07-10T00:00:00.000Z",
+        "description": [
+          "MTN PREPAID 0824984803 - pre-paid payment"
+        ],
+        "amount": -60,
+        "balance": 4220.64,
+        "id": 48
+      },
+      {
+        "date": "2018-07-10T00:00:00.000Z",
+        "description": [
+          "CJ'S FISH HOU17H42 261165758 - debit card purchase"
+        ],
+        "amount": -98,
+        "balance": 4122.64,
+        "id": 49
+      },
+      {
+        "date": "2018-07-10T00:00:00.000Z",
+        "description": [
+          "270476164 MTN PREPA 0824984803 ## - fee - pre-paid",
+          "top up"
+        ],
+        "amount": -1.11,
+        "balance": 4121.53,
+        "id": 50
+      },
+      {
+        "date": "2018-07-10T00:00:00.000Z",
+        "description": [
+          "CJ'S FISH HOU17H42 261165758 ## - debit card",
+          "purchase fee"
+        ],
+        "amount": -5.85,
+        "balance": 4115.68,
+        "id": 51
+      },
+      {
+        "date": "2018-07-10T00:00:00.000Z",
+        "description": [
+          "CJ'S FISH HOU17H44 261165758 ## - debit card",
+          "purchase fee"
+        ],
+        "amount": -5.85,
+        "balance": 4109.83,
+        "id": 52
+      },
+      {
+        "date": "2018-07-11T00:00:00.000Z",
+        "description": [
+          "ETHNIC CERAMIC17H11 226116575 - debit card",
+          "purchase"
+        ],
+        "amount": -763,
+        "balance": 3346.83,
+        "id": 53
+      },
+      {
+        "date": "2018-07-11T00:00:00.000Z",
+        "description": [
+          "ETHNIC CERAMIC17H11 226116575 ## - debit card",
+          "purchase fee"
+        ],
+        "amount": -5.85,
+        "balance": 3340.98,
+        "id": 54
+      },
+      {
+        "date": "2018-07-14T00:00:00.000Z",
+        "description": [
+          "YIORGOS THE GR11H14 226116575 - debit card",
+          "purchase"
+        ],
+        "amount": -190,
+        "balance": 3150.98,
+        "id": 55
+      },
+      {
+        "date": "2018-07-14T00:00:00.000Z",
+        "description": [
+          "SEVEN ELEVEN T13H06 226116575 - debit card purchase"
+        ],
+        "amount": -108.85,
+        "balance": 3042.13,
+        "id": 56
+      },
+      {
+        "date": "2018-07-14T00:00:00.000Z",
+        "description": [
+          "PnP Fam Sable 18H06 226116575 - debit card purchase"
+        ],
+        "amount": -487.82,
+        "balance": 2554.31,
+        "id": 57
+      },
+      {
+        "date": "2018-07-14T00:00:00.000Z",
+        "description": [
+          "PnP Fam Sable 18H09 226116575 - debit card purchase"
+        ],
+        "amount": -133.55,
+        "balance": 2420.76,
+        "id": 58
+      },
+      {
+        "date": "2018-07-14T00:00:00.000Z",
+        "description": [
+          "PnP Fam Sable 18H06 226116575 ## - debit card purchase",
+          "fee"
+        ],
+        "amount": -5.85,
+        "balance": 2414.91,
+        "id": 59
+      },
+      {
+        "date": "2018-07-14T00:00:00.000Z",
+        "description": [
+          "SEVEN ELEVEN T13H06 226116575 ## - debit card",
+          "purchase fee"
+        ],
+        "amount": -5.85,
+        "balance": 2409.06,
+        "id": 60
+      },
+      {
+        "date": "2018-07-14T00:00:00.000Z",
+        "description": [
+          "PnP Fam Sable 18H09 226116575 ## - debit card purchase",
+          "fee"
+        ],
+        "amount": -5.85,
+        "balance": 2403.21,
+        "id": 61
+      },
+      {
+        "date": "2018-07-14T00:00:00.000Z",
+        "description": [
+          "YIORGOS THE GR11H14 226116575 ## - debit card",
+          "purchase fee"
+        ],
+        "amount": -5.85,
+        "balance": 2397.36,
+        "id": 62
+      },
+      {
+        "date": "2018-07-16T00:00:00.000Z",
+        "description": [
+          "Vat 16H07 - ib transfer"
+        ],
+        "amount": 4000,
+        "balance": 6397.36,
+        "id": 63
+      },
+      {
+        "date": "2018-07-16T00:00:00.000Z",
+        "description": [
+          "Vat 16H04 - ib transfer"
+        ],
+        "amount": 35000,
+        "balance": 41397.36,
+        "id": 64
+      },
+      {
+        "date": "2018-07-16T00:00:00.000Z",
+        "description": [
+          "V131057244 06635549501 - pre-paid electricity"
+        ],
+        "amount": -300,
+        "balance": 41097.36,
+        "id": 65
+      },
+      {
+        "date": "2018-07-16T00:00:00.000Z",
+        "description": [
+          "SARS-VAT-VALUE ADDE 261165758 - ib payment"
+        ],
+        "amount": -38415.51,
+        "balance": 2681.85,
+        "id": 66
+      },
+      {
+        "date": "2018-07-16T00:00:00.000Z",
+        "description": [
+          "270476164 4406635549 09H56 ## - fee pre paid electricity"
+        ],
+        "amount": -1.31,
+        "balance": 2680.54,
+        "id": 67
+      },
+      {
+        "date": "2018-07-16T00:00:00.000Z",
+        "description": [
+          "OUTSURANCE OT17413331 VO9686 - insurance premium"
+        ],
+        "amount": -602.06,
+        "balance": 2078.48,
+        "id": 68
+      },
+      {
+        "date": "2018-07-16T00:00:00.000Z",
+        "description": [
+          "SARS-VATVALUE ADDED TAX ## - fee: payment confirm",
+          "- email"
+        ],
+        "amount": -1.11,
+        "balance": 2077.37,
+        "id": 69
+      },
+      {
+        "date": "2018-07-17T00:00:00.000Z",
+        "description": [
+          "588818364001 14H40 261165758 - ib transfer"
+        ],
+        "amount": 1000,
+        "balance": 3077.37,
+        "id": 70
+      },
+      {
+        "date": "2018-07-17T00:00:00.000Z",
+        "description": [
+          "0791515194 14H44 372378130 - cellphone instantmon",
+          "cash"
+        ],
+        "amount": -400,
+        "balance": 2677.37,
+        "id": 71
+      },
+      {
+        "date": "2018-07-17T00:00:00.000Z",
+        "description": [
+          "ACC: 270476164 REF: 372378130 ## - fee - instant money"
+        ],
+        "amount": -10.04,
+        "balance": 2667.33,
+        "id": 72
+      },
+      {
+        "date": "2018-07-18T00:00:00.000Z",
+        "description": [
+          "BOB Indoni - real time transfer"
+        ],
+        "amount": 10000,
+        "balance": 12667.33,
+        "id": 73
+      },
+      {
+        "date": "2018-07-19T00:00:00.000Z",
+        "description": [
+          "PROSPUR 0683 13H30 261165758 - autobank cash",
+          "withdrawal at"
+        ],
+        "amount": -500,
+        "balance": 12167.33,
+        "id": 74
+      },
+      {
+        "date": "2018-07-19T00:00:00.000Z",
+        "description": [
+          "NANDOS PLUMSTE17H57 261165758 - debit card",
+          "purchase"
+        ],
+        "amount": -342,
+        "balance": 11825.33,
+        "id": 75
+      },
+      {
+        "date": "2018-07-19T00:00:00.000Z",
+        "description": [
+          "NANDOS PLUMSTE17H57 261165758 ## - debit card",
+          "purchase fee"
+        ],
+        "amount": -5.85,
+        "balance": 11819.48,
+        "id": 76
+      },
+      {
+        "date": "2018-07-20T00:00:00.000Z",
+        "description": [
+          "588818364001 17H27 261165758 - ib transfer"
+        ],
+        "amount": 2000,
+        "balance": 13819.48,
+        "id": 77
+      },
+      {
+        "date": "2018-07-20T00:00:00.000Z",
+        "description": [
+          "WOOLWORTHS 17H28 226116575 - debit card purchase"
+        ],
+        "amount": -2322.01,
+        "balance": 11497.47,
+        "id": 78
+      },
+      {
+        "date": "2018-07-20T00:00:00.000Z",
+        "description": [
+          "588818364001 08H31 261165758 - ib transfer"
+        ],
+        "amount": -8000,
+        "balance": 3497.47,
+        "id": 79
+      },
+      {
+        "date": "2018-07-20T00:00:00.000Z",
+        "description": [
+          "787779 CHELSEA15H59 226116575 - debit card purchase"
+        ],
+        "amount": -300,
+        "balance": 3197.47,
+        "id": 80
+      },
+      {
+        "date": "2018-07-20T00:00:00.000Z",
+        "description": [
+          "787779 CHELSEA15H59 226116575 ## - debit card",
+          "purchase fee"
+        ],
+        "amount": -5.85,
+        "balance": 3191.62,
+        "id": 81
+      },
+      {
+        "date": "2018-07-20T00:00:00.000Z",
+        "description": [
+          "WOOLWORTHS 17H28 226116575 ## - debit card",
+          "purchase fee"
+        ],
+        "amount": -5.85,
+        "balance": 3185.77,
+        "id": 82
+      },
+      {
+        "date": "2018-07-21T00:00:00.000Z",
+        "description": [
+          "270476164 2006635549 08H39 ## - fee pre paid electricity"
+        ],
+        "amount": -1.31,
+        "balance": 3184.46,
+        "id": 83
+      },
+      {
+        "date": "2018-07-21T00:00:00.000Z",
+        "description": [
+          "V131304220 06635549501 - pre-paid electricity"
+        ],
+        "amount": -300,
+        "balance": 2884.46,
+        "id": 84
+      },
+      {
+        "date": "2018-07-21T00:00:00.000Z",
+        "description": [
+          "MrP H MAIN ROA10H41 226116575 - debit card purchase"
+        ],
+        "amount": -1752.78,
+        "balance": 1131.68,
+        "id": 85
+      },
+      {
+        "date": "2018-07-21T00:00:00.000Z",
+        "description": [
+          "MrP H MAIN ROA10H41 226116575 ## - debit card",
+          "purchase fee"
+        ],
+        "amount": -5.85,
+        "balance": 1125.83,
+        "id": 86
+      },
+      {
+        "date": "2018-07-23T00:00:00.000Z",
+        "description": [
+          "WOOLWORTHS 11H33 226116575 - debit card purchase"
+        ],
+        "amount": -264.75,
+        "balance": 861.08,
+        "id": 87
+      },
+      {
+        "date": "2018-07-23T00:00:00.000Z",
+        "description": [
+          "WOOLWORTHS 11H33 226116575 ## - debit card",
+          "purchase fee"
+        ],
+        "amount": -5.85,
+        "balance": 855.23,
+        "id": 88
+      },
+      {
+        "date": "2018-07-27T00:00:00.000Z",
+        "description": [
+          "Cltx Concord M18H46 226116575 - debit card purchase"
+        ],
+        "amount": -300,
+        "balance": 555.23,
+        "id": 89
+      },
+      {
+        "date": "2018-07-27T00:00:00.000Z",
+        "description": [
+          "Cltx Concord M18H46 226116575 ## - debit card purchase",
+          "fee"
+        ],
+        "amount": -5.85,
+        "balance": 549.38,
+        "id": 90
+      },
+      {
+        "date": "2018-07-30T00:00:00.000Z",
+        "description": [
+          "McCloud Media - credit transfer"
+        ],
+        "amount": 88550,
+        "balance": 89099.38,
+        "id": 91
+      },
+      {
+        "date": "2018-07-30T00:00:00.000Z",
+        "description": [
+          "Rosh advance 17H43 - ib transfer"
+        ],
+        "amount": 7000,
+        "balance": 96099.38,
+        "id": 92
+      },
+      {
+        "date": "2018-07-30T00:00:00.000Z",
+        "description": [
+          "CALTEX HOUT BA16H10 261165758 - debit card purchase"
+        ],
+        "amount": -200,
+        "balance": 95899.38,
+        "id": 93
+      },
+      {
+        "date": "2018-07-30T00:00:00.000Z",
+        "description": [
+          "CALTEX HOUT BA16H10 261165758 ## - debit card",
+          "purchase fee"
+        ],
+        "amount": -5.85,
+        "balance": 95893.53,
+        "id": 94
+      },
+      {
+        "date": "2018-07-31T00:00:00.000Z",
+        "description": [
+          "MISHAL FORTUNE 261165758 - ib payment"
+        ],
+        "amount": -21000,
+        "balance": 74893.53,
+        "id": 95
+      },
+      {
+        "date": "2018-07-31T00:00:00.000Z",
+        "description": [
+          "V131782099 06635549501 - pre-paid electricity"
+        ],
+        "amount": -300,
+        "balance": 74593.53,
+        "id": 96
+      },
+      {
+        "date": "2018-07-31T00:00:00.000Z",
+        "description": [
+          "ROSHNI HARALDSEN 261165758 - ib payment"
+        ],
+        "amount": -20000,
+        "balance": 54593.53,
+        "id": 97
+      },
+      {
+        "date": "2018-07-31T00:00:00.000Z",
+        "description": [
+          "JENINE LINDEQUE 261165758 - ib payment"
+        ],
+        "amount": -18000,
+        "balance": 36593.53,
+        "id": 98
+      },
+      {
+        "date": "2018-07-31T00:00:00.000Z",
+        "description": [
+          "OLIVIA TUNWANA 261165758 - ib payment"
+        ],
+        "amount": -1400,
+        "balance": 35193.53,
+        "id": 99
+      },
+      {
+        "date": "2018-07-31T00:00:00.000Z",
+        "description": [
+          "270476164 9906635549 06H03 ## - fee pre paid electricity"
+        ],
+        "amount": -1.31,
+        "balance": 35192.22,
+        "id": 100
+      },
+      {
+        "date": "2018-07-31T00:00:00.000Z",
+        "description": [
+          "GREENPEACEGPAN002337 - account payment"
+        ],
+        "amount": -150,
+        "balance": 35042.22,
+        "id": 101
+      },
+      {
+        "date": "2018-07-31T00:00:00.000Z",
+        "description": [
+          "DISCOVERY 4043070435712000 - electronic trf - credit",
+          "card"
+        ],
+        "amount": -973,
+        "balance": 34069.22,
+        "id": 102
+      },
+      {
+        "date": "2018-07-31T00:00:00.000Z",
+        "description": [
+          "OLIVIA TUNWANA ## - fee: payment confirm - sms"
+        ],
+        "amount": -1.11,
+        "balance": 34068.11,
+        "id": 103
+      },
+      {
+        "date": "2018-07-31T00:00:00.000Z",
+        "description": [
+          "JENINE LINDEQUE ## - fee: payment confirm - sms"
+        ],
+        "amount": -1.11,
+        "balance": 34067,
+        "id": 104
+      },
+      {
+        "date": "2018-07-31T00:00:00.000Z",
+        "description": [
+          "MISHAL FORTUNE ## - fee: payment confirm - email"
+        ],
+        "amount": -1.11,
+        "balance": 34065.89,
+        "id": 105
+      },
+      {
+        "date": "2018-07-31T00:00:00.000Z",
+        "description": [
+          "ACC 270476164 ## - service fee"
+        ],
+        "amount": -360.48,
+        "balance": 33705.41,
+        "id": 106
+      },
+      {
+        "date": "2018-07-31T00:00:00.000Z",
+        "description": [
+          "ACC 270476164 ## - monthly management fee"
+        ],
+        "amount": -75.66,
+        "balance": 33629.75,
+        "id": 107
+      },
+      {
+        "date": "2018-08-01T00:00:00.000Z",
+        "description": [
+          "ZESTLIFE MPW0056229 - account payment"
+        ],
+        "amount": -165,
+        "balance": 33464.75,
+        "id": 108
+      },
+      {
+        "date": "2018-08-01T00:00:00.000Z",
+        "description": [
+          "AXXESS 44316247 SAGEPAY - service agreement"
+        ],
+        "amount": -2064,
+        "balance": 31400.75,
+        "id": 109
+      },
+      {
+        "date": "2018-08-01T00:00:00.000Z",
+        "description": [
+          "ZESTLIFE GAP5640685 - account payment"
+        ],
+        "amount": -543.71,
+        "balance": 30857.04,
+        "id": 110
+      },
+      {
+        "date": "2018-08-01T00:00:00.000Z",
+        "description": [
+          "DISC PREM M5835637 -179722839 - medical aid",
+          "contribution"
+        ],
+        "amount": -3375,
+        "balance": 27482.04,
+        "id": 111
+      },
+      {
+        "date": "2018-08-01T00:00:00.000Z",
+        "description": [
+          "VIRGIN ACTX10823298 136398 - account payment"
+        ],
+        "amount": -298.5,
+        "balance": 27183.54,
+        "id": 112
+      },
+      {
+        "date": "2018-08-01T00:00:00.000Z",
+        "description": [
+          "MULTID FORHETZNER 39836452 - account payment"
+        ],
+        "amount": -180,
+        "balance": 27003.54,
+        "id": 113
+      },
+      {
+        "date": "2018-08-01T00:00:00.000Z",
+        "description": [
+          "TRACKER 00CLI1689920TRI46088 - service agreement"
+        ],
+        "amount": -214.71,
+        "balance": 26788.83,
+        "id": 114
+      },
+      {
+        "date": "2018-08-01T00:00:00.000Z",
+        "description": [
+          "LIBLIFE 01AUG58218624100C/P - insurance premium"
+        ],
+        "amount": -1381.47,
+        "balance": 25407.36,
+        "id": 115
+      },
+      {
+        "date": "2018-08-02T00:00:00.000Z",
+        "description": [
+          "ERIK HARALDSEN 261165758 - ib payment"
+        ],
+        "amount": -4000,
+        "balance": 21407.36,
+        "id": 116
+      },
+      {
+        "date": "2018-08-02T00:00:00.000Z",
+        "description": [
+          "SBSA VAF 30027810 0001 02 AUG - account payment"
+        ],
+        "amount": -6907.81,
+        "balance": 14499.55,
+        "id": 117
+      },
+      {
+        "date": "2018-08-02T00:00:00.000Z",
+        "description": [
+          "OUTSURANCE OT17413331 XW7305 - insurance",
+          "premium"
+        ],
+        "amount": -2889.23,
+        "balance": 11610.32,
+        "id": 118
+      },
+      {
+        "date": "2018-08-02T00:00:00.000Z",
+        "description": [
+          "ERIK HARALDSEN ## - fee: payment confirm - email"
+        ],
+        "amount": -1.11,
+        "balance": 11609.21,
+        "id": 119
+      },
+      {
+        "date": "2018-08-03T00:00:00.000Z",
+        "description": [
+          "270476164 4106635549 09H41 ## - fee pre paid electricity"
+        ],
+        "amount": -1.31,
+        "balance": 11607.9,
+        "id": 120
+      },
+      {
+        "date": "2018-08-03T00:00:00.000Z",
+        "description": [
+          "V131970441 06635549501 - pre-paid electricity"
+        ],
+        "amount": -300,
+        "balance": 11307.9,
+        "id": 121
+      },
+      {
+        "date": "2018-08-03T00:00:00.000Z",
+        "description": [
+          "THE WOODLANDS 22H35 226116575 - debit card",
+          "purchase"
+        ],
+        "amount": -275,
+        "balance": 11032.9,
+        "id": 122
+      },
+      {
+        "date": "2018-08-03T00:00:00.000Z",
+        "description": [
+          "THE WOODLANDS 22H35 226116575 ## - debit card",
+          "purchase fee"
+        ],
+        "amount": -5.85,
+        "balance": 11027.05,
+        "id": 123
+      },
+      {
+        "date": "2018-08-06T00:00:00.000Z",
+        "description": [
+          "PnP Crp Clarem16H04 226116575 - debit card purchase"
+        ],
+        "amount": -785.79,
+        "balance": 10241.26,
+        "id": 124
+      },
+      {
+        "date": "2018-08-06T00:00:00.000Z",
+        "description": [
+          "EASTLAKE CONVE11H09 226116575 - debit card",
+          "purchase"
+        ],
+        "amount": -300,
+        "balance": 9941.26,
+        "id": 125
+      },
+      {
+        "date": "2018-08-06T00:00:00.000Z",
+        "description": [
+          "PnP Crp Clarem16H04 226116575 ## - debit card purchase",
+          "fee"
+        ],
+        "amount": -5.85,
+        "balance": 9935.41,
+        "id": 126
+      },
+      {
+        "date": "2018-08-06T00:00:00.000Z",
+        "description": [
+          "EASTLAKE CONVE11H09 226116575 ## - debit card",
+          "purchase fee"
+        ],
+        "amount": -5.85,
+        "balance": 9929.56,
+        "id": 127
+      },
+      {
+        "date": "2018-08-06T00:00:00.000Z",
+        "description": [
+          "TELKOMMOBI50337794101055535624 - telephone account"
+        ],
+        "amount": -220.51,
+        "balance": 9709.05,
+        "id": 128
+      },
+      {
+        "date": "2018-08-07T00:00:00.000Z",
+        "description": [
+          "ORCA ELECTRICAL 261165758 - ib payment"
+        ],
+        "amount": -1390,
+        "balance": 8319.05,
+        "id": 129
+      },
+      {
+        "date": "2018-08-07T00:00:00.000Z",
+        "description": [
+          "ORCA ELECTRICAL ## - fee: payment confirm - email"
+        ],
+        "amount": -1.11,
+        "balance": 8317.94,
+        "id": 130
+      },
+      {
+        "date": "2018-08-08T00:00:00.000Z",
+        "description": [
+          "Checkers Plums17H38 261165758 - debit card purchase"
+        ],
+        "amount": -481.55,
+        "balance": 7836.39,
+        "id": 131
+      },
+      {
+        "date": "2018-08-08T00:00:00.000Z",
+        "description": [
+          "Checkers Plums17H38 261165758 ## - debit card",
+          "purchase fee"
+        ],
+        "amount": -5.85,
+        "balance": 7830.54,
+        "id": 132
+      },
+      {
+        "date": "2018-08-10T00:00:00.000Z",
+        "description": [
+          "McCloud Media - credit transfer"
+        ],
+        "amount": 24150,
+        "balance": 31980.54,
+        "id": 133
+      },
+      {
+        "date": "2018-08-10T00:00:00.000Z",
+        "description": [
+          "270476164 3506635549 06H19 ## - fee pre paid electricity"
+        ],
+        "amount": -1.31,
+        "balance": 31979.23,
+        "id": 134
+      },
+      {
+        "date": "2018-08-10T00:00:00.000Z",
+        "description": [
+          "V132214735 06635549501 - pre-paid electricity"
+        ],
+        "amount": -300,
+        "balance": 31679.23,
+        "id": 135
+      },
+      {
+        "date": "2018-08-10T00:00:00.000Z",
+        "description": [
+          "QCK LEZMIN 4648 CC 261165758 - ib payment"
+        ],
+        "amount": -2997,
+        "balance": 28682.23,
+        "id": 136
+      },
+      {
+        "date": "2018-08-10T00:00:00.000Z",
+        "description": [
+          "QCK LEZMIN 4648 CC ## - fee: payment confirm - email"
+        ],
+        "amount": -1.11,
+        "balance": 28681.12,
+        "id": 137
+      },
+      {
+        "date": "2018-08-11T00:00:00.000Z",
+        "description": [
+          "588818364001 04H21 261165758 - ib transfer"
+        ],
+        "amount": -24150,
+        "balance": 4531.12,
+        "id": 138
+      },
+      {
+        "date": "2018-08-13T00:00:00.000Z",
+        "description": [
+          "404052 AUTO CO14H16 226116575 - debit card purchase"
+        ],
+        "amount": -300,
+        "balance": 4231.12,
+        "id": 139
+      },
+      {
+        "date": "2018-08-13T00:00:00.000Z",
+        "description": [
+          "TIGERS MILK SU19H54 226116575 - debit card purchase"
+        ],
+        "amount": -700,
+        "balance": 3531.12,
+        "id": 140
+      },
+      {
+        "date": "2018-08-13T00:00:00.000Z",
+        "description": [
+          "TIGERS MILK SU19H54 226116575 ## - debit card",
+          "purchase fee"
+        ],
+        "amount": -5.85,
+        "balance": 3525.27,
+        "id": 141
+      },
+      {
+        "date": "2018-08-13T00:00:00.000Z",
+        "description": [
+          "404052 AUTO CO14H16 226116575 ## - debit card",
+          "purchase fee"
+        ],
+        "amount": -5.85,
+        "balance": 3519.42,
+        "id": 142
+      },
+      {
+        "date": "2018-08-15T00:00:00.000Z",
+        "description": [
+          "270476164 9806635549 16H08 ## - fee pre paid electricity"
+        ],
+        "amount": -1.31,
+        "balance": 3518.11,
+        "id": 143
+      },
+      {
+        "date": "2018-08-15T00:00:00.000Z",
+        "description": [
+          "V132408798 06635549501 - pre-paid electricity"
+        ],
+        "amount": -300,
+        "balance": 3218.11,
+        "id": 144
+      },
+      {
+        "date": "2018-08-16T00:00:00.000Z",
+        "description": [
+          "OUTSURANCE OT17413331 YM3643 - insurance premium"
+        ],
+        "amount": -602.06,
+        "balance": 2616.05,
+        "id": 145
+      },
+      {
+        "date": "2018-08-17T00:00:00.000Z",
+        "description": [
+          "Checkers Plums15H53 261165758 - debit card purchase"
+        ],
+        "amount": -499.44,
+        "balance": 2116.61,
+        "id": 146
+      },
+      {
+        "date": "2018-08-17T00:00:00.000Z",
+        "description": [
+          "BLACKBURN S PH16H07 226116575 - debit card",
+          "purchase"
+        ],
+        "amount": -322.3,
+        "balance": 1794.31,
+        "id": 147
+      },
+      {
+        "date": "2018-08-17T00:00:00.000Z",
+        "description": [
+          "270476164 BLACKBURN S PH16H07 ## - debit card",
+          "purchase fee"
+        ],
+        "amount": -5.85,
+        "balance": 1788.46,
+        "id": 148
+      },
+      {
+        "date": "2018-08-17T00:00:00.000Z",
+        "description": [
+          "270476164 Checkers Plums15H53 ## - debit card",
+          "purchase fee"
+        ],
+        "amount": -5.85,
+        "balance": 1782.61,
+        "id": 149
+      },
+      {
+        "date": "2018-08-21T00:00:00.000Z",
+        "description": [
+          "V132629951 06635549501 - pre-paid electricity"
+        ],
+        "amount": -300,
+        "balance": 1482.61,
+        "id": 150
+      },
+      {
+        "date": "2018-08-21T00:00:00.000Z",
+        "description": [
+          "270476164 5106635549 08H25 ## - fee pre paid electricity"
+        ],
+        "amount": -1.31,
+        "balance": 1481.3,
+        "id": 151
+      },
+      {
+        "date": "2018-08-22T00:00:00.000Z",
+        "description": [
+          "MTN PREPAID 0824984803 - pre-paid payment"
+        ],
+        "amount": -189,
+        "balance": 1292.3,
+        "id": 152
+      },
+      {
+        "date": "2018-08-22T00:00:00.000Z",
+        "description": [
+          "270476164 MTN PREPA 0824984803 ## - fee - pre-paid",
+          "top up"
+        ],
+        "amount": -1.11,
+        "balance": 1291.19,
+        "id": 153
+      },
+      {
+        "date": "2018-08-23T00:00:00.000Z",
+        "description": [
+          "Accounting 09H17 - ib transfer"
+        ],
+        "amount": 4000,
+        "balance": 5291.19,
+        "id": 154
+      },
+      {
+        "date": "2018-08-23T00:00:00.000Z",
+        "description": [
+          "GAILBRAITH RUSHBY 261165758 - ib payment"
+        ],
+        "amount": -3450,
+        "balance": 1841.19,
+        "id": 155
+      },
+      {
+        "date": "2018-08-23T00:00:00.000Z",
+        "description": [
+          "GAILBRAITH RUSHBY ## - fee: payment confirm - email"
+        ],
+        "amount": -1.11,
+        "balance": 1840.08,
+        "id": 156
+      },
+      {
+        "date": "2018-08-24T00:00:00.000Z",
+        "description": [
+          "Account &tic 10H18 - ib transfer"
+        ],
+        "amount": 2900,
+        "balance": 4740.08,
+        "id": 157
+      },
+      {
+        "date": "2018-08-24T00:00:00.000Z",
+        "description": [
+          "AXXESS 45934208 SAGEPAY - service agreement"
+        ],
+        "amount": -475,
+        "balance": 4265.08,
+        "id": 158
+      },
+      {
+        "date": "2018-08-24T00:00:00.000Z",
+        "description": [
+          "AXXESS 45936685 SAGEPAY - service agreement"
+        ],
+        "amount": -475,
+        "balance": 3790.08,
+        "id": 159
+      },
+      {
+        "date": "2018-08-25T00:00:00.000Z",
+        "description": [
+          "270476164 7606635549 06H44 ## - fee pre paid electricity"
+        ],
+        "amount": -1.31,
+        "balance": 3788.77,
+        "id": 160
+      },
+      {
+        "date": "2018-08-25T00:00:00.000Z",
+        "description": [
+          "ROSHNI HARALDSEN 261165758 - ib payment"
+        ],
+        "amount": -2000,
+        "balance": 1788.77,
+        "id": 161
+      },
+      {
+        "date": "2018-08-25T00:00:00.000Z",
+        "description": [
+          "V132796876 06635549501 - pre-paid electricity"
+        ],
+        "amount": -300,
+        "balance": 1488.77,
+        "id": 162
+      },
+      {
+        "date": "2018-08-27T00:00:00.000Z",
+        "description": [
+          "WOOLWORTHS 17H48 226116575 - debit card purchase"
+        ],
+        "amount": -568.98,
+        "balance": 919.79,
+        "id": 163
+      },
+      {
+        "date": "2018-08-27T00:00:00.000Z",
+        "description": [
+          "KRUISFONTEIN S18H17 226116575 - debit card purchase"
+        ],
+        "amount": -300,
+        "balance": 619.79,
+        "id": 164
+      },
+      {
+        "date": "2018-08-27T00:00:00.000Z",
+        "description": [
+          "270476164 KRUISFONTEIN S18H17 ## - debit card",
+          "purchase fee"
+        ],
+        "amount": -5.85,
+        "balance": 613.94,
+        "id": 165
+      },
+      {
+        "date": "2018-08-27T00:00:00.000Z",
+        "description": [
+          "270476164 WOOLWORTHS 17H48 ## - debit card",
+          "purchase fee"
+        ],
+        "amount": -5.85,
+        "balance": 608.09,
+        "id": 166
+      },
+      {
+        "date": "2018-08-29T00:00:00.000Z",
+        "description": [
+          "AXXESS 46496386 SAGEPAY - service agreement"
+        ],
+        "amount": -475,
+        "balance": 133.09,
+        "id": 167
+      },
+      {
+        "date": "2018-08-30T00:00:00.000Z",
+        "description": [
+          "Advance rosh 18H08 - ib transfer"
+        ],
+        "amount": 15000,
+        "balance": 15133.09,
+        "id": 168
+      },
+      {
+        "date": "2018-08-31T00:00:00.000Z",
+        "description": [
+          "McCloud Media - credit transfer"
+        ],
+        "amount": 139150,
+        "balance": 154283.09,
+        "id": 169
+      },
+      {
+        "date": "2018-08-31T00:00:00.000Z",
+        "description": [
+          "270476164 8306635549 13H00 ## - fee pre paid electricity"
+        ],
+        "amount": -1.31,
+        "balance": 154281.78,
+        "id": 170
+      },
+      {
+        "date": "2018-08-31T00:00:00.000Z",
+        "description": [
+          "V133106983 06635549501 - pre-paid electricity"
+        ],
+        "amount": -300,
+        "balance": 153981.78,
+        "id": 171
+      },
+      {
+        "date": "2018-08-31T00:00:00.000Z",
+        "description": [
+          "WOOLWORTHS 19H01 226116575 - debit card purchase"
+        ],
+        "amount": -759.3,
+        "balance": 153222.48,
+        "id": 172
+      },
+      {
+        "date": "2018-08-31T00:00:00.000Z",
+        "description": [
+          "270476164 WOOLWORTHS 19H01 ## - debit card",
+          "purchase fee"
+        ],
+        "amount": -5.85,
+        "balance": 153216.63,
+        "id": 173
+      },
+      {
+        "date": "2018-08-31T00:00:00.000Z",
+        "description": [
+          "GREENPEACEGPAN002337 - account payment"
+        ],
+        "amount": -150,
+        "balance": 153066.63,
+        "id": 174
+      },
+      {
+        "date": "2018-08-31T00:00:00.000Z",
+        "description": [
+          "AXXESS 46475465 SAGEPAY - service agreement"
+        ],
+        "amount": -2064,
+        "balance": 151002.63,
+        "id": 175
+      },
+      {
+        "date": "2018-08-31T00:00:00.000Z",
+        "description": [
+          "ACC 270476164 ## - service fee"
+        ],
+        "amount": -384.47,
+        "balance": 150618.16,
+        "id": 176
+      },
+      {
+        "date": "2018-08-31T00:00:00.000Z",
+        "description": [
+          "ACC 270476164 ## - monthly management fee"
+        ],
+        "amount": -75.66,
+        "balance": 150542.5,
+        "id": 177
+      },
+      {
+        "date": "2018-09-01T00:00:00.000Z",
+        "description": [
+          "Rosh advance 10H14 - ib transfer"
+        ],
+        "amount": 10000,
+        "balance": 160542.5,
+        "id": 178
+      },
+      {
+        "date": "2018-09-01T00:00:00.000Z",
+        "description": [
+          "ROSHNI HARALDSEN 261165758 - ib payment"
+        ],
+        "amount": -5000,
+        "balance": 155542.5,
+        "id": 179
+      },
+      {
+        "date": "2018-09-01T00:00:00.000Z",
+        "description": [
+          "VIRGIN ACTX10922904 140579 - business online debit"
+        ],
+        "amount": -298.5,
+        "balance": 155244,
+        "id": 180
+      },
+      {
+        "date": "2018-09-01T00:00:00.000Z",
+        "description": [
+          "THE BAY 14H47 226116575 - debit card purchase"
+        ],
+        "amount": -77,
+        "balance": 155167,
+        "id": 181
+      },
+      {
+        "date": "2018-09-01T00:00:00.000Z",
+        "description": [
+          "JENINE LINDEQUE 261165758 - ib payment"
+        ],
+        "amount": -36000,
+        "balance": 119167,
+        "id": 182
+      },
+      {
+        "date": "2018-09-01T00:00:00.000Z",
+        "description": [
+          "ERIK HARALDSEN 261165758 - ib payment"
+        ],
+        "amount": -4000,
+        "balance": 115167,
+        "id": 183
+      },
+      {
+        "date": "2018-09-01T00:00:00.000Z",
+        "description": [
+          "SPUR CINCINNAT13H27 226116575 - debit card",
+          "purchase"
+        ],
+        "amount": -270,
+        "balance": 114897,
+        "id": 184
+      },
+      {
+        "date": "2018-09-01T00:00:00.000Z",
+        "description": [
+          "OLIVIA TUNWANA 261165758 - ib payment"
+        ],
+        "amount": -1540,
+        "balance": 113357,
+        "id": 185
+      },
+      {
+        "date": "2018-09-01T00:00:00.000Z",
+        "description": [
+          "PnP Crp Pinela13H46 226116575 - debit card purchase"
+        ],
+        "amount": -348.22,
+        "balance": 113008.78,
+        "id": 186
+      },
+      {
+        "date": "2018-09-01T00:00:00.000Z",
+        "description": [
+          "AL SHAW 261165758 - ib payment"
+        ],
+        "amount": -18000,
+        "balance": 95008.78,
+        "id": 187
+      },
+      {
+        "date": "2018-09-01T00:00:00.000Z",
+        "description": [
+          "ROSHNI HARALDSEN 261165758 - ib payment"
+        ],
+        "amount": -15000,
+        "balance": 80008.78,
+        "id": 188
+      },
+      {
+        "date": "2018-09-01T00:00:00.000Z",
+        "description": [
+          "PNA PLUMST11H34 226116575 - debit card purchase"
+        ],
+        "amount": -91.4,
+        "balance": 79917.38,
+        "id": 189
+      },
+      {
+        "date": "2018-09-01T00:00:00.000Z",
+        "description": [
+          "PnP Fam Plumst11H51 226116575 - debit card purchase"
+        ],
+        "amount": -37.98,
+        "balance": 79879.4,
+        "id": 190
+      },
+      {
+        "date": "2018-09-01T00:00:00.000Z",
+        "description": [
+          "588818364001 07H39 261165758 - ib transfer"
+        ],
+        "amount": -21000,
+        "balance": 58879.4,
+        "id": 191
+      },
+      {
+        "date": "2018-09-01T00:00:00.000Z",
+        "description": [
+          "OLIVIA TUNWANA 261165758 - ib payment"
+        ],
+        "amount": -200,
+        "balance": 58679.4,
+        "id": 192
+      },
+      {
+        "date": "2018-09-01T00:00:00.000Z",
+        "description": [
+          "OXIMETA SPORT 12H25 226116575 - debit card purchase"
+        ],
+        "amount": -47,
+        "balance": 58632.4,
+        "id": 193
+      },
+      {
+        "date": "2018-09-01T00:00:00.000Z",
+        "description": [
+          "EBENHAEZER SMAL 261165758 - ib payment"
+        ],
+        "amount": -27000,
+        "balance": 31632.4,
+        "id": 194
+      },
+      {
+        "date": "2018-09-01T00:00:00.000Z",
+        "description": [
+          "270476164 SPUR CINCINNAT13H27 ## - debit card",
+          "purchase fee"
+        ],
+        "amount": -5.85,
+        "balance": 31626.55,
+        "id": 195
+      },
+      {
+        "date": "2018-09-01T00:00:00.000Z",
+        "description": [
+          "270476164 PNA PLUMST11H34 ## - debit card purchase",
+          "fee"
+        ],
+        "amount": -5.85,
+        "balance": 31620.7,
+        "id": 196
+      },
+      {
+        "date": "2018-09-01T00:00:00.000Z",
+        "description": [
+          "270476164 THE BAY 14H47 ## - debit card purchase fee"
+        ],
+        "amount": -5.85,
+        "balance": 31614.85,
+        "id": 197
+      },
+      {
+        "date": "2018-09-01T00:00:00.000Z",
+        "description": [
+          "270476164 PnP Fam Plumst11H51 ## - debit card",
+          "purchase fee"
+        ],
+        "amount": -5.85,
+        "balance": 31609,
+        "id": 198
+      },
+      {
+        "date": "2018-09-01T00:00:00.000Z",
+        "description": [
+          "270476164 PnP Crp Pinela13H46 ## - debit card purchase",
+          "fee"
+        ],
+        "amount": -5.85,
+        "balance": 31603.15,
+        "id": 199
+      },
+      {
+        "date": "2018-09-01T00:00:00.000Z",
+        "description": [
+          "270476164 OXIMETA SPORT 12H25 ## - debit card",
+          "purchase fee"
+        ],
+        "amount": -5.85,
+        "balance": 31597.3,
+        "id": 200
+      },
+      {
+        "date": "2018-09-01T00:00:00.000Z",
+        "description": [
+          "ZESTLIFE GAP5694458 - debit transfer"
+        ],
+        "amount": -543.71,
+        "balance": 31053.59,
+        "id": 201
+      },
+      {
+        "date": "2018-09-01T00:00:00.000Z",
+        "description": [
+          "TRACKER 00CLI1689920TRO57267 - service agreement"
+        ],
+        "amount": -214.71,
+        "balance": 30838.88,
+        "id": 202
+      },
+      {
+        "date": "2018-09-01T00:00:00.000Z",
+        "description": [
+          "ZESTLIFE MPW0056893 - debit transfer"
+        ],
+        "amount": -165,
+        "balance": 30673.88,
+        "id": 203
+      },
+      {
+        "date": "2018-09-01T00:00:00.000Z",
+        "description": [
+          "LIBLIFE 01SEP58218624100C/P - insurance premium"
+        ],
+        "amount": -1381.47,
+        "balance": 29292.41,
+        "id": 204
+      },
+      {
+        "date": "2018-09-01T00:00:00.000Z",
+        "description": [
+          "ERIK HARALDSEN ## - fee: payment confirm - email"
+        ],
+        "amount": -1.11,
+        "balance": 29291.3,
+        "id": 205
+      },
+      {
+        "date": "2018-09-01T00:00:00.000Z",
+        "description": [
+          "JENINE LINDEQUE ## - fee: payment confirm - sms"
+        ],
+        "amount": -1.11,
+        "balance": 29290.19,
+        "id": 206
+      },
+      {
+        "date": "2018-09-01T00:00:00.000Z",
+        "description": [
+          "AL SHAW ## - fee: payment confirm - email"
+        ],
+        "amount": -1.11,
+        "balance": 29289.08,
+        "id": 207
+      },
+      {
+        "date": "2018-09-01T00:00:00.000Z",
+        "description": [
+          "OLIVIA TUNWANA ## - fee: payment confirm - sms"
+        ],
+        "amount": -1.11,
+        "balance": 29287.97,
+        "id": 208
+      },
+      {
+        "date": "2018-09-01T00:00:00.000Z",
+        "description": [
+          "EBENHAEZER SMAL ## - fee: payment confirm - sms"
+        ],
+        "amount": -1.11,
+        "balance": 29286.86,
+        "id": 209
+      },
+      {
+        "date": "2018-09-01T00:00:00.000Z",
+        "description": [
+          "OLIVIA TUNWANA ## - fee: payment confirm - sms"
+        ],
+        "amount": -1.11,
+        "balance": 29285.75,
+        "id": 210
+      }
+    ],
+    "valid": true,
+    "breaks": [],
+    "authenticity": "original"
+  }
+}

@@ -1,0 +1,33 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Dropzone</title>
+    <link rel="stylesheet" href="./dropArea.css" />
+    <style>
+      #output {
+        width: 480px;
+        margin: 30px auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="drop-area">
+      <form>
+        <p>
+          Upload 1 or more pdfs by dragging and dropping onto the dashed region or clicking "Choose pdfs"
+        </p>
+        <input type="file" id="fileElem" multiple accept="application/pdf" />
+        <label class="button" for="fileElem">Choose pdfs</label>
+      </form>
+    </div>
+    <div id="output">
+      <pre id="json-output"></pre>
+    </div>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script> -->
+    <script src="./dist/app.js"></script>
+  </body>
+</html>

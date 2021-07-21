@@ -1,0 +1,22 @@
+{
+  "recommendations": [
+    "davidanson.vscode-markdownlint", // markdown linting
+    "dbaeumer.vscode-eslint", // eslint
+    // "dotjoshjohnson.xml", // xml linting
+    // "eamodio.gitlens", // git integration
+    "editorconfig.editorconfig", // .editorconfig
+    "esbenp.prettier-vscode", // prettier
+    // "fabiospampinato.vscode-statusbar-debugger", // useful for getting debug window out of the way
+    // "formulahendry.vscode-mysql", // run mysql in vscode
+    // "grapecity.gc-excelviewer", // view csvs
+    // "humao.rest-client", // use .http files like postman
+    // "knisterpeter.vscode-commitizen", // commitizen in vscode (git-cz)
+    // "richie5um2.vscode-sort-json",
+    "shd101wyy.markdown-preview-enhanced" // for docs
+    // "shinnn.stylelint", // for spike-docs-pub
+    // "streetsidesoftware.code-spell-checker", // spell checker - optional
+    // "sysoev.language-stylus", // for spike-docs-pub .styl files
+    // "thisismanta.stylus-supremacy", // format .styl files
+    // "tomoki1207.pdf" // view pdf in vscode
+  ]
+}

@@ -1,0 +1,31 @@
+#drop-area {
+  border: 2px dashed #ccc;
+  border-radius: 20px;
+  width: 480px;
+  font-family: sans-serif;
+  margin: 100px auto 0 auto;
+  padding: 20px;
+}
+#drop-area.highlight {
+  border-color: green;
+}
+#drop-area p {
+  margin-top: 0;
+}
+#drop-area form {
+  margin-bottom: 10px;
+}
+#drop-area .button {
+  display: inline-block;
+  padding: 10px;
+  background: #ccc;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+#drop-area .button:hover {
+  background: #ddd;
+}
+#fileElem {
+  display: none;
+}

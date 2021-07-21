@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=true
+Icon[en_ZA]=gnome-panel-launcher
+Name[en_ZA]=clean
+Exec=/spike/v9/statements/samples/samples/pdf-cli/test/scripts/clean.sh
+Name=retrieve
+Icon=gnome-panel-launcher

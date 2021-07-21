@@ -1,0 +1,17 @@
+{
+  "name": "@spike/sample-simple",
+  "version": "1.2.0",
+  "description": "Spike API sample",
+  "main": "src/pdf/app.js",
+  "author": "ilan@spikedata.co.za",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spikedata/samples"
+  },
+  "scripts": {
+    "start": "node ./src/app.js"
+  },
+  "dependencies:note": "see workspace/package.json",
+  "devDependencies:note": "see workspace/package.json"
+}

@@ -1,0 +1,29 @@
+{
+  "name": "@spike/sample-web",
+  "version": "1.0.1",
+  "description": "Spike prototype app",
+  "main": "src/server/server.js",
+  "author": "ilan@spikedata.co.za",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spikedata/samples"
+  },
+  "scripts": {
+    "start": "node src/server/server.js",
+    "clean": "rm -rf ./src/server/public/dist",
+    "build": "yarn clean && yarn bundle:prod && yarn build:warn",
+    "build:typecheck": "tsc -p tsconfig.json",
+    "build:warn": "echo \"\\n\\nnote: esmbuild does not typecheck - run \\`yarn build:typecheck\\`\\n\\n\"",
+    "bundle:prod": "node ./esbuild prod",
+    "bundle:dev": "node ./esbuild dev",
+    "bundle:watch": "node ./esbuild watch",
+    "fix": "run-s fix:*",
+    "fix:prettier": "prettier \"{src,test,tools}/**/*.{js,cjs,mjs,ts}\" --write",
+    "fix:lint": "eslint \"{src,test,tools}/**/*.{js,cjs,mjs,ts}\" --quiet --fix",
+    "diff:fix": "run-s fix:lint && prettier \"{src,test,tools}/**/*.{js,cjs,mjs,ts}\" --list-different",
+    "test": "echo there is no test"
+  },
+  "dependencies:note": "see workspace/package.json",
+  "devDependencies:note": "see workspace/package.json"
+}
