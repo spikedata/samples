@@ -7,18 +7,18 @@
     "statement": {
       "bank": "ABS",
       "accountNumber": "9217334673",
-      "statementNumber": "00",
-      "dates": {
-        "issuedOn": "2017-02-11T00:00:00.000Z",
-        "from": "2017-01-01T00:00:00.000Z",
-        "to": "2017-01-31T00:00:00.000Z"
-      },
       "nameAddress": [
         "MR I COPELYN",
         "20 SYDNEY STREET",
         "GREEN POINT",
         "8005"
-      ]
+      ],
+      "statementNumber": "00",
+      "dates": {
+        "issuedOn": "2017-02-11T00:00:00.000Z",
+        "from": "2017-01-01T00:00:00.000Z",
+        "to": "2017-01-31T00:00:00.000Z"
+      }
     },
     "transactions": [
       {
