@@ -1,6 +1,6 @@
 {
   "name": "@spike/pdf-cli",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Spike cli app to find and process pdfs using the Spike API",
   "main": "src/app.js",
   "homepage": "https://spikedata.co.za",
