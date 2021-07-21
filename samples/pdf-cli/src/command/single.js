@@ -1,5 +1,5 @@
 const Duration = require("duration");
-const spikeApi = require("@spike/api");
+const StatementsApi = require("@spike/api-statements");
 const App = require("../App");
 const output = require("../lib/output");
 const pdfHelpers = require("../lib/pdfHelpers");
@@ -44,7 +44,7 @@ async function processSinglePdf({ file, password, writeOutputJson, writeOutputCs
   if (!quiet) {
     if (result === undefined) {
       output.red("error: no response");
-    } else if (result.type === spikeApi.enums.TYPES.ERROR) {
+    } else if (result.type === StatementsApi.constants.TYPES.ERROR) {
       output.red("error:", result.code);
     } else {
       output.gray("success");
@@ -60,7 +60,7 @@ async function processSinglePdf({ file, password, writeOutputJson, writeOutputCs
     if (writeOutputJson) {
       pdfHelpers.writeOutputJson(file, result);
     }
-    if (writeOutputCsv && result.type == spikeApi.enums.TYPES.SUCCESS) {
+    if (writeOutputCsv && result.type == StatementsApi.constants.TYPES.SUCCESS) {
       pdfHelpers.writeOutputCsv(file, result.data);
     }
     return true;
@@ -71,11 +71,11 @@ async function processSinglePdf({ file, password, writeOutputJson, writeOutputCs
 
 async function requestPdf(token, pdfPath, pass) {
   try {
-    return await spikeApi.pdf(token, pdfPath, pass);
+    return await StatementsApi.pdf.request(token, pdfPath, pass);
   } catch (e) {
-    if (e instanceof spikeApi.PdfTooLargeError) {
+    if (e instanceof StatementsApi.PdfTooLargeError) {
       output.red("Error: the pdf is too large:", pdfPath);
-    } else if (e instanceof spikeApi.InputValidationError) {
+    } else if (e instanceof StatementsApi.InputValidationError) {
       output.red("Error: invalid inputs:", pdfPath, "\n ", e.validationErrors.join("\n "));
     } else {
       if (!e.response) {

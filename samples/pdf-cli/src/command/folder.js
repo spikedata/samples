@@ -3,7 +3,7 @@ const path = require("path");
 const Async = require("async");
 const minimatch = require("minimatch");
 const Duration = require("duration");
-const spikeApi = require("@spike/api");
+const StatementsApi = require("@spike/api-statements");
 const App = require("../App");
 const Csv = require("../lib/csv");
 const output = require("../lib/output");
@@ -150,7 +150,7 @@ function categorize(args, filePaths, prevIndex) {
     const prev = prevIndex && prevIndex[short];
     let state;
     if (prev) {
-      if (prev.type == spikeApi.enums.TYPES.SUCCESS) {
+      if (prev.type == StatementsApi.constants.TYPES.SUCCESS) {
         state = "prev-success";
         counts.prevSuccess++;
       } else {
@@ -332,10 +332,10 @@ function writeSummary(numFound, results, start, end) {
   output.white("Processing results:");
   let count;
   // successes
-  count = results.filter((x) => x.type == spikeApi.enums.TYPES.SUCCESS).length;
+  count = results.filter((x) => x.type == StatementsApi.constants.TYPES.SUCCESS).length;
   output.white(`- successes: ${count} / ${numProcessed}`);
   // fails
-  count = results.filter((x) => x.type == spikeApi.enums.TYPES.ERROR).length;
+  count = results.filter((x) => x.type == StatementsApi.constants.TYPES.ERROR).length;
   if (count > 0) {
     output.red(`- fails: ${count} / ${numProcessed}`);
     ok = false;
@@ -398,13 +398,13 @@ function shorten(filePath, folder) {
   return filePath;
 }
 
-async function requestPdf(TOKEN, pdfPath, pass) {
+async function requestPdf(token, pdfPath, pass) {
   try {
-    return await spikeApi.pdf(TOKEN, pdfPath, pass);
+    return await StatementsApi.pdf.request(token, pdfPath, pass);
   } catch (e) {
-    if (e instanceof spikeApi.PdfTooLargeError) {
+    if (e instanceof StatementsApi.PdfTooLargeError) {
       output.red("Error: the pdf is too large:", pdfPath);
-    } else if (e instanceof spikeApi.InputValidationError) {
+    } else if (e instanceof StatementsApi.InputValidationError) {
       output.red("Error: invalid inputs:", pdfPath, "\n ", e.validationErrors.join("\n "));
     } else {
       if (!e.response) {
@@ -431,7 +431,7 @@ async function processPdf({ folder, filePath, shortFilePath, password, writeOutp
   if (!quiet) {
     if (result === undefined) {
       output.red(`${shortFilePath}: error: no response`);
-    } else if (result.type === spikeApi.enums.TYPES.ERROR) {
+    } else if (result.type === StatementsApi.constants.TYPES.ERROR) {
       output.red(`${shortFilePath}: error:`, result.code);
     } else {
       output.green(`${shortFilePath}: success`);
@@ -443,7 +443,7 @@ async function processPdf({ folder, filePath, shortFilePath, password, writeOutp
     if (writeOutputJson) {
       pdfHelpers.writeOutputJson(filePath, result);
     }
-    if (writeOutputCsv && result.type == spikeApi.enums.TYPES.SUCCESS) {
+    if (writeOutputCsv && result.type == StatementsApi.constants.TYPES.SUCCESS) {
       pdfHelpers.writeOutputCsv(filePath, result.data);
     }
   }
@@ -453,7 +453,7 @@ async function processPdf({ folder, filePath, shortFilePath, password, writeOutp
   try {
     // NOTE: keep in sync with $/spike-db/src/pdfResult.js
     let dataSummary = {};
-    if (result && result.type == spikeApi.enums.TYPES.SUCCESS) {
+    if (result && result.type == StatementsApi.constants.TYPES.SUCCESS) {
       dataSummary = pdfHelpers.getPdfResultSummary(result.data);
     }
     summary.file = folder ? shorten(filePath, folder) : path.basename(filePath);
@@ -461,7 +461,7 @@ async function processPdf({ folder, filePath, shortFilePath, password, writeOutp
     summary.responseTime = responseTime;
     summary.duration = new Duration(requestTime, responseTime).toString();
     summary.requestId = result && result.requestId;
-    summary.type = result ? result.type : spikeApi.enums.TYPES.ERROR;
+    summary.type = result ? result.type : StatementsApi.constants.TYPES.ERROR;
     summary.code = result ? result.code : "no result";
     summary.parser = dataSummary.parser;
     summary.numTransactions = dataSummary.numTransactions;
@@ -483,7 +483,7 @@ async function processPdf({ folder, filePath, shortFilePath, password, writeOutp
 
 function createSummarySkipped(folder, filePath, password) {
   return {
-    type: spikeApi.enums.TYPES.NOTSET,
+    type: StatementsApi.constants.TYPES.NOTSET,
     code: "skipped",
     file: folder ? shorten(filePath, folder) : path.basename(filePath),
     password,
