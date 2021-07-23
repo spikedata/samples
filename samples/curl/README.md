@@ -27,11 +27,11 @@ cd samples/samples/curl
 
 # Run other example pdfs
 
-Open [config.js](./src/config.js) and change to any of the example pdfs. NB you can change to your own pdf if you like.
+Replace the pdf in the above command with any of the following example pdfs. NB you can change to your own pdf if you like.
 
-| pdf                      | notes                                                                                                   |
-| ------------------------ | ------------------------------------------------------------------------------------------------------- |
-| `./data/example.pdf`     | this is the default pdf which is converted above - it is not encrypted                                  |
-| `./data/encrypted.pdf`   | a password protected pdf - the password is in [password.txt](./data/password.txt)                       |
-| `./data/too-big.pdf`     | this pdf is too large, it will not reach our servers - AWS will return a HTTP 413 (`Payload Too Large`) |
-| `./data/way-too-big.pdf` |                                                                                                         |
+| pdf                       | notes                                                                                                   |
+| ------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `../data/example.pdf`     | this is the default pdf which is converted above - it is not encrypted                                  |
+| `../data/encrypted.pdf`   | a password protected pdf - the password is in [password.txt](./data/password.txt)                       |
+| `../data/too-big.pdf`     | this pdf is too large, it will not reach our servers - AWS will return a HTTP 413 (`Payload Too Large`) |
+| `../data/way-too-big.pdf` |                                                                                                         |
