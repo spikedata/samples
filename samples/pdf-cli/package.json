@@ -37,5 +37,8 @@
     "scripts/"
   ],
   "dependencies:note": "see workspace/package.json",
-  "devDependencies:note": "see workspace/package.json"
+  "devDependencies:note": "see workspace/package.json",
+  "dependencies": {
+    "@spike/api-statements": "^1.0.0"
+  }
 }

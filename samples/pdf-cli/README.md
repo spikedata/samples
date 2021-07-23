@@ -35,11 +35,11 @@ This video shows the `@spike/pdf-cli` in action. NOTE: the link below opens in Y
 
 ## Spike API
 
-Behind the scenes `@spike/pdf-cli` uses `@spike/api` in order to extract transactions. This involves sending your pdfs to our servers where the parsing and extracting takes place. `@spike/pdf-cli` simply contains functionality to find pdfs on your local filesystem, send them to the Spike servers, and process the json responses.
+Behind the scenes `@spike/pdf-cli` uses `@spike/api-statements` in order to extract transactions. This involves sending your pdfs to our servers where the parsing and extracting takes place. `@spike/pdf-cli` simply contains functionality to find pdfs on your local filesystem, send them to the Spike servers, and process the json responses.
 
-More info on the `@spike/api` can be found here:
+More info on the `@spike/api-statements` can be found here:
 
-- [@spike/api](https://www.npmjs.com/package/@spike/api)
+- [@spike/api-statements](https://www.npmjs.com/package/@spike/api-statements)
 - [api docs](https://app.spikedata.co.za/docs/code/api/pdf/)
 
 ## Source code
