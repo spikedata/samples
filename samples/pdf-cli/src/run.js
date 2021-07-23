@@ -247,7 +247,7 @@ yargs(hideBin(process.argv))
     },
     Combine.command
   )
-  .demandCommand()
+  .strictCommands()
   .strict()
   .help()
   .wrap(100).argv;
