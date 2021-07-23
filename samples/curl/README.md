@@ -2,12 +2,13 @@
 
 Sample app demonstrating how to access Spike API. See full [docs](https://docs.spikedata.co.za/) online.
 
-This sample converts one of the pdfs in the `./data` folder to json using the all web functions using hardcoded login credentials
+This sample uses curl to send a request to the `/pdf` endpoint. You need to obtain an [authorization token](https://docs.spikedata.co.za/developer-guide/authorization/) before you can run it.
 
 ## Requirements
 
-- [nodejs](https://nodejs.org/en/) v8+
-  - async/await used
+- bash
+- base64
+- curl
 
 ## Register
 
@@ -19,16 +20,9 @@ This sample converts one of the pdfs in the `./data` folder to json using the al
 ```sh
 # get sample repo
 git clone https://github.com/spikedata/samples
-cd samples
-yarn install
-
-# configure sample
-cd samples/sample-simple
-code ./src/config.js # edit config.js and enter your token
-
-# run = convert ./data/example.pdf
-yarn start
-# you may want to open ./data/example.pdf in a pdf viewer at this point and compare the output visually
+cd samples/samples/curl
+# save your token to ./token
+./spike-statements-api.sh ./token ../data/example.pdf
 ```
 
 # Run other example pdfs
