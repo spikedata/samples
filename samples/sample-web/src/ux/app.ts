@@ -1,4 +1,5 @@
 import DropArea from "./dropArea";
+import * as SpikePdf from "./pdf";
 import proxy from "./proxy";
 
 const _pass = undefined; // change this if you have a password protected pdf
@@ -32,7 +33,9 @@ function readFile(i, file): Promise<void> {
         return reject();
       }
       const base64Txt = (event.target.result as string).replace(/^data:application\/pdf;base64,/, "");
-      await uploadPdf(i, file, base64Txt);
+      if (await checkPdf(file, base64Txt)) {
+        await uploadPdf(i, file, base64Txt);
+      }
       resolve(); // don't bother with reject() - errors already handled by uploadPdf()
     };
     reader.readAsDataURL(file);
@@ -49,6 +52,31 @@ async function uploadPdf(i, file, base64Txt) {
 function output(val) {
   const el = document.getElementById("json-output");
   if (el) el.innerText = val ? JSON.stringify(val, null, 2) : "";
+}
+
+async function checkPdf(file, base64Txt) {
+  const password = undefined; // TODO: implement UI to capture password
+  const passwordCheck = await SpikePdf.isEncrypted(base64Txt, password);
+  switch (passwordCheck) {
+    case SpikePdf.PasswordCheck.PasswordCorrect:
+    case SpikePdf.PasswordCheck.NotEncrypted:
+      return true;
+    case SpikePdf.PasswordCheck.InvalidPdf:
+      alert("invalid pdf");
+      return false;
+    case SpikePdf.PasswordCheck.PasswordRequired:
+      alert("password required\n\nTODO: implement UI to enter password");
+      return false;
+    case SpikePdf.PasswordCheck.CheckFailed:
+      alert("unexpected error");
+      return false;
+    case SpikePdf.PasswordCheck.PasswordIncorrect:
+      alert("password incorrect, please try again");
+      return false;
+    default:
+      alert("code out of date with PasswordCheck: " + passwordCheck);
+      return false;
+  }
 }
 
 init();
