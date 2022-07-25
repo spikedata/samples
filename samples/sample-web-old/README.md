@@ -30,10 +30,11 @@ yarn install
 
 # configure sample
 cd samples/sample-web
-code ./src/config.js # edit config.js and enter your token
+code ./src/server/config.js # edit config.js and enter your token
 
-# run dev server
-yarn dev
+# build & run
+yarn build
+yarn start
 ```
 
 now browse the site:

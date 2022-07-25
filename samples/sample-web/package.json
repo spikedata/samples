@@ -10,19 +10,14 @@
     "url": "https://github.com/spikedata/samples"
   },
   "scripts": {
-    "start": "node src/server/server.js",
-    "clean": "rm -rf ./src/server/public/dist",
-    "build": "yarn clean && yarn bundle:prod && yarn build:warn",
-    "build:typecheck": "tsc -p tsconfig.json",
-    "build:warn": "echo \"\\n\\nnote: esmbuild does not typecheck - run \\`yarn build:typecheck\\`\\n\\n\"",
-    "bundle:prod": "node ./esbuild prod",
-    "bundle:dev": "node ./esbuild dev",
-    "bundle:watch": "node ./esbuild watch",
+    "dev": "vite --host",
+    "build": "vite build",
+    "serve": "vite preview",
+    "manual-build:tailwind": "tailwindcss --jit --input ./src/tailwind.css --config ./tailwind.config.js --output /tmp/auth/tailwind.css",
     "fix": "run-s fix:*",
-    "fix:prettier": "prettier \"{src,test,tools}/**/*.{js,cjs,mjs,ts}\" --write",
-    "fix:lint": "eslint \"{src,test,tools}/**/*.{js,cjs,mjs,ts}\" --quiet --fix",
-    "diff:fix": "run-s fix:lint && prettier \"{src,test,tools}/**/*.{js,cjs,mjs,ts}\" --list-different",
-    "test": "echo there is no test"
+    "fix:prettier": "prettier \"{src,test,tools}/**/*.{js,cjs,mjs,ts,vue,html}\" --write",
+    "fix:prettier:index.html": "prettier \"./index.html\" --write",
+    "fix:lint": "eslint \"{src,test,tools}/**/*.{js,cjs,mjs,ts}\" --quiet --fix"
   },
   "dependencies:note": "see workspace/package.json",
   "devDependencies:note": "see workspace/package.json"

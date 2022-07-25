@@ -16,6 +16,7 @@
   "dependencies": {
     "@fast-csv/format": "^4.3.5",
     "@spike/api-statements": "^1.0.0",
+    "ag-grid-community": "^28.0.2",
     "async": "^3.2.0",
     "axios": "^0.21.1",
     "chalk": "^4.1.1",
@@ -27,16 +28,27 @@
     "jwks-rsa": "^2.0.3",
     "minimatch": "^3.0.4",
     "read": "^1.0.7",
+    "vue": "^3.2.37",
     "yargs": "^17.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.14.5",
     "@babel/core": "^7.14.6",
     "@babel/preset-env": "^7.14.7",
+    "@headlessui/vue": "^1.6.7",
+    "@heroicons/vue": "^1.0.6",
+    "@tailwindcss/aspect-ratio": "^0.4.0",
+    "@tailwindcss/forms": "^0.5.2",
+    "@tailwindcss/line-clamp": "^0.4.0",
+    "@tailwindcss/typography": "^0.5.4",
     "@types/node": "^16.0.1",
+    "@types/tailwindcss": "^3.0.11",
     "@typescript-eslint/eslint-plugin": "^4.28.2",
     "@typescript-eslint/parser": "^4.28.2",
     "@vercel/ncc": "^0.28.6",
+    "@vitejs/plugin-vue": "^3.0.0",
+    "@vue/compiler-sfc": "^3.2.37",
+    "autoprefixer": "^10.4.7",
     "babel-loader": "^8.2.2",
     "esbuild": "^0.12.15",
     "eslint": "^7.30.0",
@@ -44,9 +56,12 @@
     "eslint-plugin-prettier": "^3.4.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.3.2",
+    "sass": "^1.53.0",
+    "tailwindcss": "^3.1.6",
     "trash-cli": "^4.0.0",
     "ts-node": "^10.0.0",
     "typescript": "^4.3.5",
-    "uglify-js": "^3.13.10"
+    "uglify-js": "^3.13.10",
+    "vite": "^3.0.0"
   }
 }
