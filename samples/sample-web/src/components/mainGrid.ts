@@ -75,9 +75,9 @@ class MedalCellRenderer {
     const amt = Rand(d.amount);
     this.eGui = document.createElement("span");
     if (d.amount < 0) {
-      this.eGui.innerHTML = `<span class="font-semibold text-red-600">${amt}</span>`;
+      this.eGui.innerHTML = `<span class="text-red-600">${amt}</span>`;
     } else {
-      this.eGui.innerHTML = `<span class="font-semibold text-green-600">${amt}</span>`;
+      this.eGui.innerHTML = `<span class="text-green-600">${amt}</span>`;
     }
   }
 
