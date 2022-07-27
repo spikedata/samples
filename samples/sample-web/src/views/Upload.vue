@@ -139,7 +139,7 @@
     </div>
 
     <!-- transactions grid -->
-    <div v-if="Object.values(_allResults).length">
+    <div v-if="true || _transactions.length">
       <h2 class="text-2xl font-extrabold leading-9 tracking-tight text-gray-900 sm:text-2xl sm:leading-10">
         Transactions
       </h2>
@@ -155,11 +155,10 @@
 import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
 import { CreditCardIcon as CreditCardIconOutline, LibraryIcon as LibraryIconOutline } from "@heroicons/vue/outline";
 import { CreditCardIcon as CreditCardIconSolid, LibraryIcon as LibraryIconSolid } from "@heroicons/vue/solid";
+import EXAMPLES from "@spike/api-statements/examples/gen/v2common.js";
 import { TYPES } from "@spike/api-statements/src/constants.js";
 import { CommonStatement, PdfDataType } from "@spike/api-statements/src/response.js";
-// import EXAMPLES from "@spike/api-statements/examples/gen/index.js";
-// import { useToast } from "vue-toastification";
-import { ref, onMounted, reactive, nextTick, computed } from "vue";
+import { ref, onMounted, reactive, nextTick } from "vue";
 import ModalInvalidPdf from "../components/converter/ModalInvalidPdf.vue";
 import ModalPassRequired from "../components/converter/ModalPassRequired.vue";
 import ModalPassIncorrect from "../components/converter/ModalPassIncorrect.vue";
@@ -167,16 +166,22 @@ import * as MainGrid from "../components/mainGrid";
 import { TOKEN } from "../config";
 import * as SpikePdf from "../lib/spikePdf";
 import DropArea from "../lib/dropArea";
-// import { useSpikeStore } from "../stores/spike";
 
 console.log("TOKEN:", TOKEN);
 
-// const toast = useToast();
-// const store = useSpikeStore();
-
 onMounted(() => {
+  const demoTransactions = EXAMPLES["pdf/success/bank-statement-normal"].result.data.transactions.map((t) => {
+    const { id, date, description, amount } = t;
+    return {
+      file: "demo.pdf",
+      id,
+      date,
+      description,
+      amount,
+    } as MainGrid.Transaction;
+  });
+  MainGrid.render("#myGrid", demoTransactions);
   initDropZone();
-  // MainGrid.init("#myGrid", EXAMPLES["pdf/success/bank-statement-normal"].result.data.transactions);
 });
 
 //#region state
@@ -237,7 +242,7 @@ function parserUrl(responseData: CommonStatement) {
 function result(id: number, response: SpikePdf.ApiResult) {
   const file = _allFiles.find((x) => x.id === id);
   if (!file) {
-    // toast.error("can't find file: " + id);
+    console.error("can't find file: " + id);
     return;
   }
 
@@ -256,11 +261,44 @@ function result(id: number, response: SpikePdf.ApiResult) {
 
   // results
   _allResults[requestId] = response;
+  _requestIdToFile[requestId] = file;
+
+  // transactions
+  if (response.type === TYPES.SUCCESS && response.data?.transactions?.length) {
+    updateTransactions();
+  }
+}
+
+function updateTransactions() {
+  _transactions = Object.values(_allResults)
+    .filter((response) => response.data?.transactions?.length)
+    .map((response) => {
+      const requestId = response.requestId;
+      const file = _requestIdToFile[requestId]?.filename;
+      return response.data?.transactions.map((t) => {
+        const { id, date, description, amount } = t;
+        return {
+          file,
+          id,
+          date,
+          description,
+          amount,
+        } as MainGrid.Transaction;
+      });
+    })
+    .flat();
+  console.log(_transactions);
+
+  setTimeout(() => {
+    MainGrid.render("#myGrid", _transactions);
+  }, 100);
 }
 
 const _allFiles = reactive<PdfFile[]>([]);
+const _requestIdToFile: Record<string, PdfFile> = {};
 const _allResults = reactive<Record<string, SpikePdf.ApiResult>>({});
 let _allFilesSeed = _allFiles.length;
+let _transactions: MainGrid.Transaction[] = [];
 
 function addFile(obj) {
   obj.id = ++_allFilesSeed;
@@ -312,7 +350,7 @@ function readFile(i, file) {
     const reader = new FileReader();
     reader.onloadend = async function (event) {
       if (!event.target) {
-        // toast.error(`couldn't read file ${file.name}`);
+        console.error(`couldn't read file ${file.name}`);
         return reject();
       }
       const base64Txt = (event.target.result as string).replace(/^data:application\/pdf;base64,/, "");
@@ -382,7 +420,6 @@ async function addPdf(i, file, base64Txt) {
   // console.log(`${i} ${file.name}`);
   // console.log(`uploading ${file.name}: POST ${UploadUrl} ...`);
   // const res = await proxy(base64Txt, file.name, _pass);
-  // toast.info(res);
   const obj = {
     filename: file.name,
     password: null,

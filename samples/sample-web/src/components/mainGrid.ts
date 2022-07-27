@@ -4,8 +4,16 @@ import { Grid, GridOptions } from "ag-grid-community";
 //   init("#myGrid");
 // });
 
-export function init(sel, rows) {
+export interface Transaction {
+  file: string;
+  id: number;
+  date: string;
+  description: string[];
+  amount: number;
+}
+export function render(sel, rows) {
   const columnDefs = [
+    { field: "file", width: 160 },
     { field: "id", headerName: "#", width: 60 },
     {
       field: "date",
@@ -16,7 +24,15 @@ export function init(sel, rows) {
         return d.date.substring(0, 10);
       },
     },
-    { field: "description", flex: 1 },
+    {
+      field: "description",
+      flex: 1,
+      valueGetter(params) {
+        const d = params.data;
+        // console.log(d);
+        return d.description.join(",");
+      },
+    },
     {
       field: "amount",
       width: 120,
