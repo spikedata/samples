@@ -12,9 +12,9 @@ enum WrapperBehaviour {
   error,
 }
 // eslint-disable-next-line prefer-const
-// let _SPIKE_PDF_WRAPPER = WrapperBehaviour.mock; // e.g. to test your code with a specific spike response
+let _SPIKE_PDF_WRAPPER = WrapperBehaviour.mock; // e.g. to test your code with a specific spike response
 // eslint-disable-next-line prefer-const
-let _SPIKE_PDF_WRAPPER = WrapperBehaviour.prod;
+// let _SPIKE_PDF_WRAPPER = WrapperBehaviour.prod;
 
 export interface PdfLocalException {
   requestId: string;

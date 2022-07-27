@@ -1,39 +1,39 @@
 <template>
-  <div class="bg-gray-200 w-screen h-screen">
-    <div class="p-6 max-w-5xl m-auto bg-white flex flex-col space-y-6">
-      <h1 class="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
-        Upload a pdf
-      </h1>
-      <div class="text-sm">
-        note: this demo uses <span class="underline font-bold">/pdftest</span> which only extracts the 1st 10
-        transactions
-      </div>
+  <div class="p-6 max-w-5xl min-h-screen m-auto bg-white flex flex-col space-y-6">
+    <h1 class="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
+      Upload a pdf
+    </h1>
+    <div class="text-sm">
+      note: this demo uses <span class="underline font-bold">/pdftest</span> which only extracts the 1st 10 transactions
+    </div>
 
-      <!-- drag n drop -->
-      <div class="px-4 py-8 sm:px-0">
-        <div
-          class="flex flex-col items-center justify-center gap-1 border-4 border-dashed border-gray-200 rounded-lg h-48"
-          :class="hover ? 'bg-gray-300' : ''"
-          id="drop-area"
+    <!-- drag n drop -->
+    <div class="px-4 py-8 sm:px-0">
+      <div
+        class="flex flex-col items-center justify-center gap-1 border-4 border-dashed border-gray-200 rounded-lg h-48"
+        :class="hover ? 'bg-gray-300' : ''"
+        id="drop-area"
+      >
+        <p> Drag and drop files here, or click the button below to pick files </p>
+        <input type="file" id="fileElem" class="hidden" multiple accept="application/pdf" />
+        <label
+          class="px-6 py-3 w-40 bg-blue-600 rounded-md text-white font-medium tracking-wide hover:bg-blue-500"
+          for="fileElem"
         >
-          <p> Drag and drop files here, or click the button below to pick files </p>
-          <input type="file" id="fileElem" class="hidden" multiple accept="application/pdf" />
-          <label
-            class="px-6 py-3 w-40 bg-blue-600 rounded-md text-white font-medium tracking-wide hover:bg-blue-500"
-            for="fileElem"
-          >
-            Choose files
-          </label>
-        </div>
+          Choose files
+        </label>
       </div>
+    </div>
 
-      <!-- files grid -->
+    <!-- files grid -->
+    <div v-if="_allFiles.length">
+      <h2 class="text-2xl font-extrabold leading-9 tracking-tight text-gray-900 sm:text-2xl sm:leading-10"> Files </h2>
       <div class="flex flex-col">
         <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
             <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
               <table class="min-w-full divide-y divide-gray-200">
-                <thead class="bg-primary">
+                <thead class="bg-blue-600">
                   <tr>
                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
                       File
@@ -53,11 +53,7 @@
                   </tr>
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200">
-                  <tr
-                    v-for="u in _allFiles"
-                    :key="u.requestId"
-                    :class="selectedFiles.includes(u.id) ? 'bg-gray-100' : ''"
-                  >
+                  <tr v-for="u in _allFiles" :key="u.requestId">
                     <td class="px-6 py-4 whitespace-nowrap">
                       <div class="text-sm font-medium text-gray-900">
                         {{ u.filename }}
@@ -71,56 +67,51 @@
                     <td class="px-6 py-4 whitespace-nowrap">
                       <div class="text-sm font-medium text-gray-900">
                         <a
-                          v-if="_allResults[u.requestId] && _allResults[u.requestId].response.data?.parser"
-                          :href="parserUrl(_allResults[u.requestId].response.data)"
+                          v-if="_allResults[u.requestId] && _allResults[u.requestId].data?.parser"
+                          :href="parserUrl(_allResults[u.requestId].data)"
                           target="_blank"
                           class="text-blue-600 hover:text-blue-800 cursor-pointer"
                         >
-                          {{ _allResults[u.requestId].response.data.parser }}
+                          {{ _allResults[u.requestId].data.parser }}
                         </a>
                       </div>
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap">
                       <div class="text-sm font-medium text-gray-900">
                         <a
-                          v-if="_allResults[u.requestId]?.calculated?.score"
                           href="https://docs.spikedata.co.za/user-guides/app/web-converter/understand-the-results/#type"
                           target="_blank"
                         >
                           <LibraryIconOutline
                             v-if="
                               _allResults[u.requestId] &&
-                              _allResults[u.requestId].response.data?.type === PdfDataType.BankStatementNoBalance
+                              _allResults[u.requestId].data?.type === PdfDataType.BankStatementNoBalance
                             "
                             class="h-4 w-4 text-blue-600 focus:outline-none"
-                            v-tooltip="{ content: 'bank statement without balance', theme: 'blue' }"
                             aria-hidden="true"
                           />
                           <LibraryIconSolid
                             v-if="
                               _allResults[u.requestId] &&
-                              _allResults[u.requestId].response.data?.type === PdfDataType.BankStatementNormal
+                              _allResults[u.requestId].data?.type === PdfDataType.BankStatementNormal
                             "
                             class="h-4 w-4 text-blue-600 focus:outline-none"
-                            v-tooltip="{ content: 'normal bank statement', theme: 'blue' }"
                             aria-hidden="true"
                           />
                           <CreditCardIconOutline
                             v-if="
                               _allResults[u.requestId] &&
-                              _allResults[u.requestId].response.data?.type === PdfDataType.CreditCardSimple
+                              _allResults[u.requestId].data?.type === PdfDataType.CreditCardSimple
                             "
                             class="h-4 w-4 text-orange-600 focus:outline-none"
-                            v-tooltip="{ content: 'simple credit card statement', theme: 'orange' }"
                             aria-hidden="true"
                           />
                           <CreditCardIconSolid
                             v-if="
                               _allResults[u.requestId] &&
-                              _allResults[u.requestId].response.data?.type === PdfDataType.CreditCardBreakdown
+                              _allResults[u.requestId].data?.type === PdfDataType.CreditCardBreakdown
                             "
                             class="h-4 w-4 text-orange-600 focus:outline-none"
-                            v-tooltip="{ content: 'credit card statement with breakdown', theme: 'orange' }"
                             aria-hidden="true"
                           />
                         </a>
@@ -129,12 +120,12 @@
                     <td class="px-6 py-4 whitespace-nowrap">
                       <div class="text-sm font-medium text-gray-900">
                         <a
-                          v-if="_allResults[u.requestId]?.calculated?.error?.code"
-                          :href="_allResults[u.requestId].calculated.error.url"
+                          v-if="_allResults[u.requestId]?.type === TYPES.ERROR"
+                          :href="getApiErrorCodeUrl(_allResults[u.requestId].code)"
                           target="_blank"
                           class="text-red-600 hover:text-red-900"
                         >
-                          {{ _allResults[u.requestId].calculated.error.code }}
+                          {{ displayCode(_allResults[u.requestId].code) }}
                         </a>
                       </div>
                     </td>
@@ -145,8 +136,13 @@
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- transactions grid -->
+    <!-- transactions grid -->
+    <div v-if="Object.values(_allResults).length">
+      <h2 class="text-2xl font-extrabold leading-9 tracking-tight text-gray-900 sm:text-2xl sm:leading-10">
+        Transactions
+      </h2>
       <div id="myGrid" style="w-full; height: 600px" class="ag-theme-alpine"></div>
     </div>
   </div>
@@ -159,22 +155,21 @@
 import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
 import { CreditCardIcon as CreditCardIconOutline, LibraryIcon as LibraryIconOutline } from "@heroicons/vue/outline";
 import { CreditCardIcon as CreditCardIconSolid, LibraryIcon as LibraryIconSolid } from "@heroicons/vue/solid";
-import { TYPES, Score } from "@spike/api-statements/src/constants.js";
+import { TYPES } from "@spike/api-statements/src/constants.js";
 import { CommonStatement, PdfDataType } from "@spike/api-statements/src/response.js";
 // import EXAMPLES from "@spike/api-statements/examples/gen/index.js";
 // import { useToast } from "vue-toastification";
 import { ref, onMounted, reactive, nextTick, computed } from "vue";
-import ModalInvalidPdf from "@/components/converter/ModalInvalidPdf.vue";
-import ModalPassRequired from "@/components/converter/ModalPassRequired.vue";
-import ModalPassIncorrect from "@/components/converter/ModalPassIncorrect.vue";
-import * as MainGrid from "@/components/mainGrid";
-import * as SpikePdf from "@/lib/spikePdf";
-import DropArea from "@/lib/dropArea";
-import { TOKEN } from "@/config";
+import ModalInvalidPdf from "../components/converter/ModalInvalidPdf.vue";
+import ModalPassRequired from "../components/converter/ModalPassRequired.vue";
+import ModalPassIncorrect from "../components/converter/ModalPassIncorrect.vue";
+import * as MainGrid from "../components/mainGrid";
+import { TOKEN } from "../config";
+import * as SpikePdf from "../lib/spikePdf";
+import DropArea from "../lib/dropArea";
+// import { useSpikeStore } from "../stores/spike";
 
 console.log("TOKEN:", TOKEN);
-
-// import { useSpikeStore } from "@/stores/spike";
 
 // const toast = useToast();
 // const store = useSpikeStore();
@@ -203,64 +198,14 @@ interface PdfFile {
   requestId?: string;
 }
 
-interface Result {
-  response: SpikePdf.PdfResponse;
-  calculated: Calculated;
+const ApiErrorUrl = "https://docs.spikedata.co.za/product/support/errors/codes/{code}/";
+
+function getApiErrorCodeUrl(code) {
+  return ApiErrorUrl.replace("{code}", code);
 }
 
-const ApiErrorUrl = "https://docs.spikedata.co.za/product/support/errors/codes/{code}/";
-const AppErrorUrl = "https://docs.spikedata.co.za/product/support/errors/#app-errors";
-
-function calculate(res: SpikePdf.PdfResponse) {
-  // local error
-  if (res.type === "localError") {
-    return <Calculated>{
-      score: Score.None,
-      error: {
-        code: "local-error",
-        url: AppErrorUrl,
-      },
-    };
-  }
-
-  // api error
-  const code = basename(res.code);
-  const url = ApiErrorUrl.replace("{code}", res.code);
-
-  switch (res.type) {
-    case TYPES.NOTSET:
-    case TYPES.INPUTS:
-    case TYPES.INTERIM:
-      console.error("calculate: unexpected type:", res.type);
-      return <Calculated>{
-        score: Score.None,
-        error: {
-          code,
-          url,
-        },
-      };
-    case TYPES.SUCCESS:
-      return <Calculated>{
-        score: res.score,
-      };
-    case TYPES.ERROR:
-      return <Calculated>{
-        score: res.score,
-        error: {
-          code,
-          url,
-        },
-      };
-    default:
-      console.error("calculate: code out of date with TYPES:", (res as any).type);
-      return <Calculated>{
-        score: Score.None,
-        error: {
-          code,
-          url,
-        },
-      };
-  }
+function displayCode(code) {
+  return basename(code);
 }
 
 function basename(code: string): string {
@@ -276,7 +221,20 @@ function basename(code: string): string {
   return code;
 }
 
-function result(id: number, response: SpikePdf.PdfResponse) {
+function parserUrl(responseData: CommonStatement) {
+  let anchor = responseData.parser.replace(/_/g, "-").toLowerCase();
+  if (
+    responseData.type === PdfDataType.BankStatementNoBalance ||
+    responseData.type === PdfDataType.BankStatementNormal
+  ) {
+    return `https://docs.spikedata.co.za/statements/debit/#${anchor}`;
+  } else {
+    // CreditCardBreakdown, CreditCardSimple
+    return `https://docs.spikedata.co.za/statements/credit/#${anchor}`;
+  }
+}
+
+function result(id: number, response: SpikePdf.ApiResult) {
   const file = _allFiles.find((x) => x.id === id);
   if (!file) {
     // toast.error("can't find file: " + id);
@@ -296,15 +254,12 @@ function result(id: number, response: SpikePdf.PdfResponse) {
     }
   }
 
-  // calculated
-  _allResults[requestId] = {
-    response,
-    calculated: calculate(response),
-  };
+  // results
+  _allResults[requestId] = response;
 }
 
 const _allFiles = reactive<PdfFile[]>([]);
-const _allResults = reactive<Record<string, Result>>({}); // requestId => Result; requestId from _allFiles[x].requestId
+const _allResults = reactive<Record<string, SpikePdf.ApiResult>>({});
 let _allFilesSeed = _allFiles.length;
 
 function addFile(obj) {
@@ -544,17 +499,4 @@ async function uploadPending() {
 }
 
 //#endregion
-
-function parserUrl(responseData: CommonStatement) {
-  let anchor = responseData.parser.replace(/_/g, "-").toLowerCase();
-  if (
-    responseData.type === PdfDataType.BankStatementNoBalance ||
-    responseData.type === PdfDataType.BankStatementNormal
-  ) {
-    return `https://docs.spikedata.co.za/statements/debit/#${anchor}`;
-  } else {
-    // CreditCardBreakdown, CreditCardSimple
-    return `https://docs.spikedata.co.za/statements/credit/#${anchor}`;
-  }
-}
 </script>
