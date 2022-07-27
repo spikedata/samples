@@ -1,6 +1,13 @@
 <template>
   <TransitionRoot as="template" :show="open">
-    <Dialog as="div" auto-reopen="true" class="fixed z-10 inset-0 overflow-y-auto" @close="open = false">
+    <Dialog
+      as="div"
+      auto-reopen="true"
+      class="fixed z-10 inset-0 overflow-y-auto"
+      @close="open = false"
+      @keyup.enter="click(2)"
+      @keyup.esc="click(2)"
+    >
       <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
         <TransitionChild
           as="template"
