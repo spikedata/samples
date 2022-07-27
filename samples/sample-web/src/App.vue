@@ -1,7 +1,7 @@
 <template>
-  <Home />
+  <Upload />
 </template>
 
 <script setup>
-import Home from "@/views/Home.vue";
+import Upload from "@/views/Upload.vue";
 </script>
