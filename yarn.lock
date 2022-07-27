@@ -1136,7 +1136,7 @@
   resolved "https://registry.npmjs.org/@spike/api-statements/-/api-statements-1.0.0.tgz#187b774eb5d7a494cc075646c39e92f2ae436417"
   integrity sha512-AkSsn/y5t1xJL0/dkOCmAJv77cAvXaz7zw1ptE3hvLAy46r8iBiAWJTDE4zSps6kLct3iv32y7IEq3Ou/1D3rw==
 
-"@spike/api-statements@^1.2.0":
+"@spike/api-statements@latest":
   version "1.2.0"
   resolved "https://registry.npmjs.org/@spike/api-statements/-/api-statements-1.2.0.tgz#15698ea3d218060955d69623b37f6d79ee7643f3"
   integrity sha512-w3DgqYben5HM17P0t0QkW1XJI3/2pVslZxdTCYHvmGnVDRlq1HY1DkmJ8ifp9UCM4diKhiq1booo2qt7P06cjQ==
