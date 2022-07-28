@@ -114,6 +114,14 @@
                             class="h-4 w-4 text-orange-600 focus:outline-none"
                             aria-hidden="true"
                           />
+                          <CreditCardIconSolid
+                            v-if="
+                              _allResults[u.requestId] &&
+                              _allResults[u.requestId].data?.type === PdfDataType.CreditCardBreakdownMultiUser
+                            "
+                            class="h-4 w-4 text-orange-600 focus:outline-none"
+                            aria-hidden="true"
+                          />
                         </a>
                       </div>
                     </td>
@@ -162,16 +170,9 @@ import ModalInvalidPdf from "../components/converter/ModalInvalidPdf.vue";
 import ModalPassRequired from "../components/converter/ModalPassRequired.vue";
 import ModalPassIncorrect from "../components/converter/ModalPassIncorrect.vue";
 import * as MainGrid from "../components/mainGrid";
-import { TOKEN } from "../config";
 import * as SpikePdf from "../lib/spikePdf";
 import DropArea from "../lib/dropArea";
-
-if (!TOKEN) {
-  // see:
-  // - ../config.ts : TOKEN
-  // - ../lib/spikePdf.ts : WrapperBehaviour.mock
-  alert("TOKEN missing\n\nYou need to enter your token in config.js or switch to mock requests.");
-}
+import { TOKEN } from "../config";
 
 onMounted(() => {
   MainGrid.render("#myGrid");

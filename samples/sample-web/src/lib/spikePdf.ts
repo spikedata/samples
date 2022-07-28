@@ -1,25 +1,22 @@
 import * as StatementsApi from "@spike/api-statements";
 import EXAMPLES from "@spike/api-statements/examples/gen/v2common.js"; // we include examples of all error and success types in this file indexed by .code - see @spike/api-statements/src/response.js : PdfCodes
 import { v4 as uuidv4 } from "uuid";
+import { WrapperBehaviour, REQUEST_TYPE, TOKEN } from "../config";
+
+if (!TOKEN && (REQUEST_TYPE === WrapperBehaviour.test || REQUEST_TYPE === WrapperBehaviour.prod)) {
+  alert("TOKEN missing\n\nYou need to enter your token in config.js.");
+}
 
 /*
 This file implements a wrapper around the @spike/api-statements which is useful for:
 
 - doing mock invocations - i.e. just returning a pre-canned EXAMPLE
 - testing local error conditions - e.g. like network problems, or pdf too large
-- making a real request to the Spike servers
-
+- making a prod request to the Spike servers
+- making a test request to the Spike servers
 */
 
 //#region request
-
-enum WrapperBehaviour {
-  prod,
-  mock,
-  error,
-}
-const _SPIKE_PDF_WRAPPER = WrapperBehaviour.mock; // e.g. to test your code with a specific spike response
-// const _SPIKE_PDF_WRAPPER = WrapperBehaviour.prod;
 
 export interface PdfLocalException {
   requestId: string;
@@ -44,8 +41,9 @@ export async function request(
   file?: string,
   pass?: string
 ): Promise<ApiResult> {
-  switch (_SPIKE_PDF_WRAPPER) {
+  switch (REQUEST_TYPE) {
     case WrapperBehaviour.prod:
+    case WrapperBehaviour.test:
       return await req(token, buffer, file, pass);
     case WrapperBehaviour.mock:
       return mock(buffer, file, pass);
@@ -56,7 +54,11 @@ export async function request(
 
 async function req(token: string, buffer: string | Buffer, file?: string, pass?: string): Promise<ApiResult> {
   try {
-    return await StatementsApi.pdf.request(token, file, pass, buffer);
+    if (REQUEST_TYPE === WrapperBehaviour.test) {
+      return await StatementsApi.pdf.request2Test(token, file, pass, buffer);
+    } else {
+      return await StatementsApi.pdf.request2(token, file, pass, buffer);
+    }
   } catch (e) {
     if (e instanceof StatementsApi.PdfTooLargeError) {
       return createPdfLocalException("the pdf is too large");
