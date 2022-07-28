@@ -1,6 +1,6 @@
 export function create() {
-  let p2 = {};
-  let p = new Promise((resolve, reject) => {
+  const p2: any = {};
+  const p = new Promise((resolve, reject) => {
     p2.resolve = resolve;
     p2.reject = reject;
   });
@@ -9,7 +9,7 @@ export function create() {
   return p;
 }
 
-export async function state(p) {
+export async function state(p: any) {
   const t = {};
   return await Promise.race([p, t]).then(
     (v) => (v === t ? "pending" : "fulfilled"),
@@ -17,10 +17,10 @@ export async function state(p) {
   );
 }
 
-export async function set(p, value) {
+export async function set(p: any, value: any) {
   p.resolve(value);
 }
 
-export async function wait(p) {
+export async function wait(p: any) {
   return await p;
 }

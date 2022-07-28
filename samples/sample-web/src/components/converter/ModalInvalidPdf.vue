@@ -72,7 +72,7 @@
 import { Dialog, DialogOverlay, DialogTitle, TransitionChild, TransitionRoot } from "@headlessui/vue";
 import { CheckIcon, ExclamationIcon } from "@heroicons/vue/outline";
 import { computed, ref } from "vue";
-import * as promiseCallback from "../../lib/promiseCallback.js";
+import * as promiseCallback from "../../lib/promiseCallback.ts";
 
 const open = ref(false);
 const filePath = ref("");

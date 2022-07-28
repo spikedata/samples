@@ -101,7 +101,7 @@ import { Dialog, DialogOverlay, DialogTitle, TransitionChild, TransitionRoot } f
 import { CheckIcon } from "@heroicons/vue/outline";
 import { ExclamationCircleIcon } from "@heroicons/vue/solid";
 import { computed, ref } from "vue";
-import * as promiseCallback from "../../lib/promiseCallback.js";
+import * as promiseCallback from "../../lib/promiseCallback.ts";
 
 const open = ref(false);
 const filePath = ref("");
