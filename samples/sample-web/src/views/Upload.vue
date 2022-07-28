@@ -139,7 +139,7 @@
     </div>
 
     <!-- transactions grid -->
-    <div v-if="true || _transactions.length">
+    <div>
       <h2 class="text-2xl font-extrabold leading-9 tracking-tight text-gray-900 sm:text-2xl sm:leading-10">
         Transactions
       </h2>
@@ -155,7 +155,6 @@
 import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
 import { CreditCardIcon as CreditCardIconOutline, LibraryIcon as LibraryIconOutline } from "@heroicons/vue/outline";
 import { CreditCardIcon as CreditCardIconSolid, LibraryIcon as LibraryIconSolid } from "@heroicons/vue/solid";
-import EXAMPLES from "@spike/api-statements/examples/gen/v2common.js";
 import { TYPES } from "@spike/api-statements/src/constants.js";
 import { CommonStatement, PdfDataType } from "@spike/api-statements/src/response.js";
 import { ref, onMounted, reactive, nextTick } from "vue";
@@ -170,17 +169,7 @@ import DropArea from "../lib/dropArea";
 console.log("TOKEN:", TOKEN);
 
 onMounted(() => {
-  const demoTransactions = EXAMPLES["pdf/success/bank-statement-normal"].result.data.transactions.map((t) => {
-    const { id, date, description, amount } = t;
-    return {
-      file: "demo.pdf",
-      id,
-      date,
-      description,
-      amount,
-    } as MainGrid.Transaction;
-  });
-  MainGrid.render("#myGrid", demoTransactions);
+  MainGrid.render("#myGrid");
   initDropZone();
 });
 
@@ -290,7 +279,7 @@ function updateTransactions() {
   console.log(_transactions);
 
   setTimeout(() => {
-    MainGrid.render("#myGrid", _transactions);
+    MainGrid.update(_transactions);
   }, 100);
 }
 
@@ -500,11 +489,6 @@ async function addPdf(i, file, base64Txt) {
 
 //#region convert pdf
 
-// function sleep(miliseconds = 1000): Promise<void> {
-//   if (miliseconds == 0) return Promise.resolve();
-//   return new Promise((resolve) => setTimeout(() => resolve(), miliseconds));
-// }
-
 let uploadInProgress = false;
 async function uploadPending() {
   let p;
@@ -519,12 +503,10 @@ async function uploadPending() {
       p = pending[0];
       p.state = State.uploading;
       let spikeResponse = await SpikePdf.request(TOKEN, p.buffer, p.filename, p.password);
-      // console.log(JSON.stringify(spikeResponse, null, 2)); // HACK: comment out in prod
       result(p.id, spikeResponse);
 
       // render - update _allFiles grid for the pdf we just uploaded
       await nextTick();
-      // await sleep(1000);
 
       pending = _allFiles.filter((x) => x.state === State.pending);
     }
