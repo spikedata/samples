@@ -1,20 +1,25 @@
 import * as StatementsApi from "@spike/api-statements";
-import EXAMPLES from "@spike/api-statements/examples/gen/v2common.js";
-import { v4 as uuidv4 } from "uuid"; // uuid@8.x
+import EXAMPLES from "@spike/api-statements/examples/gen/v2common.js"; // we include examples of all error and success types in this file indexed by .code - see @spike/api-statements/src/response.js : PdfCodes
+import { v4 as uuidv4 } from "uuid";
+
+/*
+This file implements a wrapper around the @spike/api-statements which is useful for:
+
+- doing mock invocations - i.e. just returning a pre-canned EXAMPLE
+- testing local error conditions - e.g. like network problems, or pdf too large
+- making a real request to the Spike servers
+
+*/
 
 //#region request
 
-// NOTE: you can set this in the browser devtools console:
-//  _SPIKE_PDF_WRAPPER = 0|1|2;
 enum WrapperBehaviour {
   prod,
   mock,
   error,
 }
-// eslint-disable-next-line prefer-const
-let _SPIKE_PDF_WRAPPER = WrapperBehaviour.mock; // e.g. to test your code with a specific spike response
-// eslint-disable-next-line prefer-const
-// let _SPIKE_PDF_WRAPPER = WrapperBehaviour.prod;
+const _SPIKE_PDF_WRAPPER = WrapperBehaviour.mock; // e.g. to test your code with a specific spike response
+// const _SPIKE_PDF_WRAPPER = WrapperBehaviour.prod;
 
 export interface PdfLocalException {
   requestId: string;
@@ -76,10 +81,11 @@ async function req(token: string, buffer: string | Buffer, file?: string, pass?:
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function mock(_buffer: string | Buffer, _file?: string, _pass?: string): StatementsApi.response.PdfCommonResponse {
-  return EXAMPLES["pdf/success/bank-statement-normal"].result;
   // return EXAMPLES["pdf/success/bank-statement-normal"].result;
-  // return EXAMPLES["pdf/success/bank-statement-normal"].result;
-  // return EXAMPLES["pdf/success/bank-statement-normal"].result;
+  // return EXAMPLES["pdf/success/bank-statement-no-balance"].result;
+  // return EXAMPLES["pdf/success/credit-card-breakdown"].result;
+  // return EXAMPLES["pdf/success/credit-card-breakdown-multi-user"].result;
+  return EXAMPLES["pdf/success/credit-card-simple"].result;
 }
 
 //#endregion

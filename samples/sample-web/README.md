@@ -43,4 +43,4 @@ now browse the site:
 
 ## Screenshot
 
-![](docs/screenshot.png)
+![](./docs/screenshot.png)

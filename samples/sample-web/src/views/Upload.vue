@@ -166,7 +166,12 @@ import { TOKEN } from "../config";
 import * as SpikePdf from "../lib/spikePdf";
 import DropArea from "../lib/dropArea";
 
-console.log("TOKEN:", TOKEN);
+if (!TOKEN) {
+  // see:
+  // - ../config.ts : TOKEN
+  // - ../lib/spikePdf.ts : WrapperBehaviour.mock
+  alert("TOKEN missing\n\nYou need to enter your token in config.js or switch to mock requests.");
+}
 
 onMounted(() => {
   MainGrid.render("#myGrid");
