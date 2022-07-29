@@ -11,7 +11,7 @@ async function pdfProxy(TOKEN, FILE, PASS, BUFFER) {
   try {
     // request
     console.log(`requesting ${StatementsApi.constants.url} ...`);
-    const spikeResponse = await StatementsApi.pdf.request(TOKEN, FILE, PASS, BUFFER);
+    const spikeResponse = await StatementsApi.pdf.request1(TOKEN, FILE, PASS, BUFFER);
 
     // NOTE:
     // - the .js sample does not benefit from typechecking
