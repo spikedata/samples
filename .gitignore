@@ -6,3 +6,4 @@ coverage
 *.log
 
 config.priv.ts
+config.priv.js
