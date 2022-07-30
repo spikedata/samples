@@ -7,14 +7,14 @@
     "statement": {
       "bank": "STD",
       "accountNumber": "27-047-616-4",
+      "nameAddress": [
+        "ENDPOST  PRODUCTION"
+      ],
       "dates": {
         "issuedOn": "2018-09-10T00:00:00.000Z",
         "from": "2018-07-01T00:00:00.000Z",
         "to": "2018-09-01T00:00:00.000Z"
-      },
-      "nameAddress": [
-        "ENDPOST  PRODUCTION"
-      ]
+      }
     },
     "transactions": [
       {
@@ -1972,7 +1972,6 @@
       }
     ],
     "valid": true,
-    "breaks": [],
-    "authenticity": "original"
+    "breaks": []
   }
 }
