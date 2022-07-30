@@ -1131,6 +1131,11 @@
   dependencies:
     execa "^2.0.1"
 
+"@spike/api-statements@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@spike/api-statements/-/api-statements-1.0.0.tgz#187b774eb5d7a494cc075646c39e92f2ae436417"
+  integrity sha512-AkSsn/y5t1xJL0/dkOCmAJv77cAvXaz7zw1ptE3hvLAy46r8iBiAWJTDE4zSps6kLct3iv32y7IEq3Ou/1D3rw==
+
 "@spike/api-statements@latest":
   version "1.2.0"
   resolved "https://registry.npmjs.org/@spike/api-statements/-/api-statements-1.2.0.tgz#15698ea3d218060955d69623b37f6d79ee7643f3"
@@ -1800,14 +1805,6 @@ caniuse-lite@^1.0.30001335, caniuse-lite@^1.0.30001366:
   version "1.0.30001370"
   resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001370.tgz#0a30d4f20d38b9e108cc5ae7cc62df9fe66cd5ba"
   integrity sha512-3PDmaP56wz/qz7G508xzjx8C+MC2qEm4SYhSEzC9IBROo+dGXFWRuaXkWti0A9tuI00g+toiriVqxtWMgl350g==
-
-chalk@4.1.2:
-  version "4.1.2"
-  resolved "https://registry.npmjs.org/chalk/-/chalk-4.1.2.tgz#aac4e2b7734a740867aeb16bf02aad556a1e7a01"
-  integrity sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==
-  dependencies:
-    ansi-styles "^4.1.0"
-    supports-color "^7.1.0"
 
 chalk@^2.0.0, chalk@^2.4.1:
   version "2.4.2"

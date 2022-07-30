@@ -37,5 +37,8 @@
     "scripts/"
   ],
   "dependencies:note": "see workspace/package.json",
-  "devDependencies:note": "see workspace/package.json"
+  "devDependencies:note": "see workspace/package.json",
+  "dependencies": {
+    "chalk": "4.1.2"
+  }
 }
