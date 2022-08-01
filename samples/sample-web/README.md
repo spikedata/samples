@@ -43,7 +43,7 @@ now browse the site:
 
 ## 3. Screenshot
 
-![](./docs/screenshot.png)
+![](./docs/screenshot1.png)
 
 ## 4. UX advice
 
