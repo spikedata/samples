@@ -34,7 +34,7 @@ TOKENPATH=$1
 FILE=$2 # e.g. e.g. ./absa.2017-01.pdf
 PASS=$3
 
-URL=https://api.spikedata.co.za/pdf
+URL=https://api.spikedata.co.za/pdf2
 FILENAME=$(basename $FILE)
 TOKEN=$(cat $TOKENPATH)
 

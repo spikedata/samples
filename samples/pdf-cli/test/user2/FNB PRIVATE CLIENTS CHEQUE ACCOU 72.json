@@ -13,12 +13,12 @@
         "GORDON'S BAY",
         "7140"
       ],
-      "accountType": "FNB Private Clients Cheque Account",
       "dates": {
         "issuedOn": "2016-04-26T00:00:00.000Z",
         "from": "2016-01-27T00:00:00.000Z",
         "to": "2016-04-26T00:00:00.000Z"
-      }
+      },
+      "accountType": "FNB Private Clients Cheque Account"
     },
     "transactions": [
       {
@@ -57,7 +57,7 @@
         "date": "2016-01-29T00:00:00.000Z",
         "description": [
           "Naedo Collection",
-          "Dimensionl23584780  Sage160129"
+          "Dimensionl23584780 Sage160129"
         ],
         "amount": -125,
         "balance": 1264.72,
@@ -67,7 +67,7 @@
         "date": "2016-01-29T00:00:00.000Z",
         "description": [
           "Magtape Debit",
-          "Mweb In   Internet:R7006758"
+          "Mweb In Internet:R7006758"
         ],
         "amount": -349,
         "balance": 915.72,
@@ -78,7 +78,7 @@
         "description": [
           "POS Purchase Chq Card",
           "C*lakeside Motors C",
-          "400974*3386  27 Jan"
+          "400974*3386 27 Jan"
         ],
         "amount": -49,
         "balance": 866.72,
@@ -88,7 +88,7 @@
         "date": "2016-01-30T00:00:00.000Z",
         "description": [
           "Chq Card ATM Local Cash Advanc",
-          "Cash  00600960005802",
+          "Cash 00600960005802",
           "74325636028000190012"
         ],
         "amount": -300,
@@ -109,7 +109,7 @@
         "date": "2016-02-01T00:00:00.000Z",
         "description": [
           "Magtape Debit",
-          "Intasure  Aps160200486   Ue3v9"
+          "Intasure Aps160200486 Ue3v9"
         ],
         "amount": -551.35,
         "balance": -134.63,
@@ -119,7 +119,7 @@
         "date": "2016-02-01T00:00:00.000Z",
         "description": [
           "Magtape Debit",
-          "Intasure  Vntg/37977",
+          "Intasure Vntg/37977",
           "T705j"
         ],
         "amount": -1059.28,
@@ -140,7 +140,7 @@
         "date": "2016-02-01T00:00:00.000Z",
         "description": [
           "Magtape Debit",
-          "Momentum  01007590696   Sg5624"
+          "Momentum 01007590696 Sg5624"
         ],
         "amount": -2210,
         "balance": -4555.91,
@@ -150,7 +150,7 @@
         "date": "2016-02-01T00:00:00.000Z",
         "description": [
           "Chq Card ATM Local Cash Advanc",
-          "Cash  00600960005802",
+          "Cash 00600960005802",
           "74325636029000180014"
         ],
         "amount": -300,
@@ -161,7 +161,7 @@
         "date": "2016-02-01T00:00:00.000Z",
         "description": [
           "Magtape Debit",
-          "Tms ",
+          "Tms",
           "Health Ins E459574"
         ],
         "amount": -298,
@@ -173,7 +173,7 @@
         "description": [
           "Chq Card Fuel Purchase",
           "C*total Obsevatory",
-          "400974*3386  29 Jan"
+          "400974*3386 29 Jan"
         ],
         "amount": -500,
         "balance": -5653.91,
@@ -182,7 +182,7 @@
       {
         "date": "2016-02-02T00:00:00.000Z",
         "description": [
-          "#Item Paid   Insufficient Fund",
+          "#Item Paid Insufficient Fund",
           "6 Items On 16/02/01"
         ],
         "amount": -375,
@@ -243,7 +243,7 @@
         "date": "2016-02-04T00:00:00.000Z",
         "description": [
           "Naedo Collection",
-          "Boodle    300669-3725537160203"
+          "Boodle 300669-3725537160203"
         ],
         "amount": -2990,
         "balance": 2800.36,
@@ -294,7 +294,7 @@
         "date": "2016-02-08T00:00:00.000Z",
         "description": [
           "Magtape Debit",
-          "Momentum    210814353   Td8814"
+          "Momentum 210814353 Td8814"
         ],
         "amount": -1011.41,
         "balance": 279.61,
@@ -304,7 +304,7 @@
         "date": "2016-02-08T00:00:00.000Z",
         "description": [
           "Chq Card ATM Local Cash Advanc",
-          "Cash  00600960005802",
+          "Cash 00600960005802",
           "74325636036000190025"
         ],
         "amount": -600,
@@ -326,7 +326,7 @@
         "description": [
           "Chq Card Fuel Purchase",
           "C*total Obsevatory",
-          "400974*3386  05 Feb"
+          "400974*3386 05 Feb"
         ],
         "amount": -37.5,
         "balance": -467.89,
@@ -346,7 +346,7 @@
         "date": "2016-02-09T00:00:00.000Z",
         "description": [
           "#Edo Collect Attempt Fee",
-          "#Boodle    300669-3725538160203"
+          "#Boodle 300669-3725538160203"
         ],
         "amount": -8,
         "balance": -475.89,
@@ -356,7 +356,7 @@
         "date": "2016-02-09T00:00:00.000Z",
         "description": [
           "Chq Card ATM Local Cash Advanc",
-          "Cash  00600960005802",
+          "Cash 00600960005802",
           "74325636037000140026"
         ],
         "amount": -300,
@@ -368,7 +368,7 @@
         "description": [
           "POS Purchase Chq Card",
           "Tap Room",
-          "400974*3386  05 Feb"
+          "400974*3386 05 Feb"
         ],
         "amount": -220,
         "balance": -995.89,
@@ -377,7 +377,7 @@
       {
         "date": "2016-02-10T00:00:00.000Z",
         "description": [
-          "#Item Paid   Insufficient Fund",
+          "#Item Paid Insufficient Fund",
           "1 Items On 16/02/09"
         ],
         "amount": -50,
@@ -408,7 +408,7 @@
         "date": "2016-02-11T00:00:00.000Z",
         "description": [
           "Naedo Collection",
-          "Boodle    300669-3762288160211"
+          "Boodle 300669-3762288160211"
         ],
         "amount": -3236.58,
         "balance": 3806.46,
@@ -500,7 +500,7 @@
         "date": "2016-02-15T00:00:00.000Z",
         "description": [
           "Magtape Debit",
-          "M-choice  M-choice12217789"
+          "M-choice M-choice12217789"
         ],
         "amount": -779,
         "balance": -1011.54,
@@ -519,7 +519,7 @@
       {
         "date": "2016-02-16T00:00:00.000Z",
         "description": [
-          "#Item Paid   Insufficient Fund",
+          "#Item Paid Insufficient Fund",
           "2 Items On 16/02/15"
         ],
         "amount": -100,
@@ -540,7 +540,7 @@
         "date": "2016-02-16T00:00:00.000Z",
         "description": [
           "Chq Card ATM Local Cash Advanc",
-          "Cash  00600960005802",
+          "Cash 00600960005802",
           "74325636044000170035"
         ],
         "amount": -100,
@@ -552,7 +552,7 @@
         "description": [
           "POS International Purchase Chq",
           "Itunes.Com/Bill",
-          "400974*3386  13 Feb"
+          "400974*3386 13 Feb"
         ],
         "amount": -14.99,
         "balance": -1326.53,
@@ -561,7 +561,7 @@
       {
         "date": "2016-02-17T00:00:00.000Z",
         "description": [
-          "#Item Paid   Insufficient Fund",
+          "#Item Paid Insufficient Fund",
           "1 Items On 16/02/16"
         ],
         "amount": -50,
@@ -641,7 +641,7 @@
         "date": "2016-02-22T00:00:00.000Z",
         "description": [
           "Send Money Dr",
-          "Send   27767082188"
+          "Send 27767082188"
         ],
         "amount": -300,
         "balance": 5279.84,
@@ -701,7 +701,7 @@
         "date": "2016-02-23T00:00:00.000Z",
         "description": [
           "Chq Card ATM Local Cash Advanc",
-          "Cash  00600960005802",
+          "Cash 00600960005802",
           "74325636051000180045"
         ],
         "amount": -300,
@@ -712,7 +712,7 @@
         "date": "2016-02-23T00:00:00.000Z",
         "description": [
           "Chq Card ATM Local Cash Advanc",
-          "Cash  00600960005802",
+          "Cash 00600960005802",
           "74325636052000110046"
         ],
         "amount": -600,
@@ -765,7 +765,7 @@
         "date": "2016-02-25T00:00:00.000Z",
         "description": [
           "Send Money Dr",
-          "Send   27767082188"
+          "Send 27767082188"
         ],
         "amount": -1600,
         "balance": 3148.77,
@@ -776,7 +776,7 @@
         "description": [
           "POS Purchase Chq Card",
           "C*dinkel Bakery",
-          "400974*3386  24 Feb"
+          "400974*3386 24 Feb"
         ],
         "amount": -83,
         "balance": 3065.77,
@@ -787,7 +787,7 @@
         "description": [
           "POS Purchase Chq Card",
           "Lite-kem Pharmacy",
-          "400974*3386  22 Feb"
+          "400974*3386 22 Feb"
         ],
         "amount": -225,
         "balance": 2840.77,
@@ -798,7 +798,7 @@
         "description": [
           "Chq Card Fuel Purchase",
           "C*paddys Service St",
-          "400974*3386  23 Feb"
+          "400974*3386 23 Feb"
         ],
         "amount": -43.2,
         "balance": 2797.57,
@@ -829,7 +829,7 @@
         "date": "2016-02-26T00:00:00.000Z",
         "description": [
           "Chq Card ATM Local Cash Advanc",
-          "Cash  00600960005802",
+          "Cash 00600960005802",
           "74325636055000170050"
         ],
         "amount": -600,
@@ -851,7 +851,7 @@
         "description": [
           "POS Purchase Chq Card",
           "C*sun 1 Milnerton",
-          "400974*3386  24 Feb"
+          "400974*3386 24 Feb"
         ],
         "amount": -509.04,
         "balance": 840.53,
@@ -862,7 +862,7 @@
         "description": [
           "Chq Card Fuel Purchase",
           "C*paradise Service",
-          "400974*3386  24 Feb"
+          "400974*3386 24 Feb"
         ],
         "amount": -500,
         "balance": 340.53,
@@ -892,7 +892,7 @@
         "date": "2016-02-29T00:00:00.000Z",
         "description": [
           "Magtape Debit",
-          "Mweb In   Internet:R7273507"
+          "Mweb In Internet:R7273507"
         ],
         "amount": -349,
         "balance": -301.23,
@@ -903,7 +903,7 @@
         "description": [
           "POS Purchase Chq Card",
           "Kloofnek Superette",
-          "400974*3386  24 Feb"
+          "400974*3386 24 Feb"
         ],
         "amount": -41,
         "balance": -342.23,
@@ -912,7 +912,7 @@
       {
         "date": "2016-03-01T00:00:00.000Z",
         "description": [
-          "#Item Paid   Insufficient Fund",
+          "#Item Paid Insufficient Fund",
           "2 Items On 16/02/29"
         ],
         "amount": -100,
@@ -943,7 +943,7 @@
         "date": "2016-03-01T00:00:00.000Z",
         "description": [
           "#Edo Collect Attempt Fee",
-          "#Dimensionl24658500  Sage160301"
+          "#Dimensionl24658500 Sage160301"
         ],
         "amount": -8,
         "balance": -450.23,
@@ -963,7 +963,7 @@
         "date": "2016-03-01T00:00:00.000Z",
         "description": [
           "Magtape Debit",
-          "Intasure  Aps160300581   Uu1j6"
+          "Intasure Aps160300581 Uu1j6"
         ],
         "amount": -551.35,
         "balance": -1151.58,
@@ -973,7 +973,7 @@
         "date": "2016-03-01T00:00:00.000Z",
         "description": [
           "Magtape Debit",
-          "Intasure  Vntg/37977",
+          "Intasure Vntg/37977",
           "U2l68"
         ],
         "amount": -1062,
@@ -994,7 +994,7 @@
         "date": "2016-03-01T00:00:00.000Z",
         "description": [
           "Magtape Debit",
-          "Momentum  01007590696   Uy9685"
+          "Momentum 01007590696 Uy9685"
         ],
         "amount": -2210,
         "balance": -5575.58,
@@ -1004,7 +1004,7 @@
         "date": "2016-03-01T00:00:00.000Z",
         "description": [
           "Magtape Debit",
-          "Tms ",
+          "Tms",
           "Health Ins E459574"
         ],
         "amount": -298,
@@ -1014,7 +1014,7 @@
       {
         "date": "2016-03-02T00:00:00.000Z",
         "description": [
-          "#Item Paid   Insufficient Fund",
+          "#Item Paid Insufficient Fund",
           "6 Items On 16/03/01"
         ],
         "amount": -375,
@@ -1075,7 +1075,7 @@
         "date": "2016-03-05T00:00:00.000Z",
         "description": [
           "Chq Card ATM Local Cash Advanc",
-          "Cash  00600960007671",
+          "Cash 00600960007671",
           "74325636063000170093"
         ],
         "amount": -600,
@@ -1087,7 +1087,7 @@
         "description": [
           "POS Purchase Chq Card",
           "Lite-kem Pharmacy",
-          "400974*3386  03 Mar"
+          "400974*3386 03 Mar"
         ],
         "amount": -282,
         "balance": 424.35,
@@ -1107,7 +1107,7 @@
         "date": "2016-03-07T00:00:00.000Z",
         "description": [
           "Magtape Debit",
-          "Momentum    210814353   Vv9241"
+          "Momentum 210814353 Vv9241"
         ],
         "amount": -1011.41,
         "balance": -593.06,
@@ -1118,7 +1118,7 @@
         "description": [
           "POS International Purchase Chq",
           "Uber Bv",
-          "400974*3386  04 Mar"
+          "400974*3386 04 Mar"
         ],
         "amount": -111.97,
         "balance": -705.03,
@@ -1127,7 +1127,7 @@
       {
         "date": "2016-03-08T00:00:00.000Z",
         "description": [
-          "#Item Paid   Insufficient Fund",
+          "#Item Paid Insufficient Fund",
           "2 Items On 16/03/07"
         ],
         "amount": -125,
@@ -1159,7 +1159,7 @@
         "description": [
           "Chq Card Fuel Purchase",
           "C*total Lakeside",
-          "400974*3386  05 Mar"
+          "400974*3386 05 Mar"
         ],
         "amount": -200,
         "balance": -1027.85,
@@ -1168,7 +1168,7 @@
       {
         "date": "2016-03-09T00:00:00.000Z",
         "description": [
-          "#Item Paid   Insufficient Fund",
+          "#Item Paid Insufficient Fund",
           "1 Items On 16/03/08"
         ],
         "amount": -50,
@@ -1230,7 +1230,7 @@
         "date": "2016-03-11T00:00:00.000Z",
         "description": [
           "Magtape Debit",
-          "M-choice  Mcadhoc13829419"
+          "M-choice Mcadhoc13829419"
         ],
         "amount": -149,
         "balance": 10138.92,
@@ -1241,7 +1241,7 @@
         "description": [
           "POS Purchase Chq Card",
           "PnP Campsbay",
-          "400974*3386  10 Mar"
+          "400974*3386 10 Mar"
         ],
         "amount": -37,
         "balance": 10101.92,
@@ -1282,7 +1282,7 @@
         "date": "2016-03-15T00:00:00.000Z",
         "description": [
           "Chq Card ATM Local Cash Advanc",
-          "Cash  00600960005802",
+          "Cash 00600960005802",
           "74325636072000120076"
         ],
         "amount": -600,
@@ -1303,7 +1303,7 @@
         "date": "2016-03-15T00:00:00.000Z",
         "description": [
           "Magtape Debit",
-          "M-choice  M-choice13886688"
+          "M-choice M-choice13886688"
         ],
         "amount": -779,
         "balance": 7925.39,
@@ -1314,7 +1314,7 @@
         "description": [
           "POS Purchase Chq Card",
           "Kloofnek Superette",
-          "400974*3386  11 Mar"
+          "400974*3386 11 Mar"
         ],
         "amount": -50,
         "balance": 7875.39,
@@ -1325,7 +1325,7 @@
         "description": [
           "POS Purchase Chq Card",
           "Autoworks Salt Rive",
-          "400974*3386  11 Mar"
+          "400974*3386 11 Mar"
         ],
         "amount": -9087.29,
         "balance": -1211.9,
@@ -1334,7 +1334,7 @@
       {
         "date": "2016-03-16T00:00:00.000Z",
         "description": [
-          "#Item Paid   Insufficient Fund",
+          "#Item Paid Insufficient Fund",
           "1 Items On 16/03/15"
         ],
         "amount": -75,
@@ -1412,7 +1412,7 @@
         "date": "2016-03-19T00:00:00.000Z",
         "description": [
           "Chq Card ATM Local Cash Advanc",
-          "Cash  00600960005802",
+          "Cash 00600960005802",
           "74325636077000160083"
         ],
         "amount": -600,
@@ -1423,7 +1423,7 @@
         "date": "2016-03-19T00:00:00.000Z",
         "description": [
           "Chq Card ATM Local Cash Advanc",
-          "Cash  00601991030445",
+          "Cash 00601991030445",
           "74341886077000221905"
         ],
         "amount": -1500,
@@ -1435,7 +1435,7 @@
         "description": [
           "Chq Card Fuel Purchase",
           "C*firlands Serv Sta",
-          "400974*3386  17 Mar"
+          "400974*3386 17 Mar"
         ],
         "amount": -391.7,
         "balance": 3694.82,
@@ -1455,7 +1455,7 @@
         "date": "2016-03-22T00:00:00.000Z",
         "description": [
           "Send Money Dr",
-          "Send   27788618512"
+          "Send 27788618512"
         ],
         "amount": -400,
         "balance": 3281.81,
@@ -1476,7 +1476,7 @@
         "description": [
           "POS Purchase Chq Card",
           "C*mossel Bay 1 Stop",
-          "400974*3386  20 Mar"
+          "400974*3386 20 Mar"
         ],
         "amount": -46.5,
         "balance": 2504.97,
@@ -1487,7 +1487,7 @@
         "description": [
           "POS Purchase Chq Card",
           "Thyme And Again Far",
-          "400974*3386  18 Mar"
+          "400974*3386 18 Mar"
         ],
         "amount": -58.5,
         "balance": 2446.47,
@@ -1498,7 +1498,7 @@
         "description": [
           "POS Purchase Chq Card",
           "C*boykies Biltong",
-          "400974*3386  19 Mar"
+          "400974*3386 19 Mar"
         ],
         "amount": -112.25,
         "balance": 2334.22,
@@ -1509,7 +1509,7 @@
         "description": [
           "POS Purchase Chq Card",
           "C*mossel Bay 1 Stop",
-          "400974*3386  20 Mar"
+          "400974*3386 20 Mar"
         ],
         "amount": -243.85,
         "balance": 2090.37,
@@ -1520,7 +1520,7 @@
         "description": [
           "Chq Card Fuel Purchase",
           "C*mossel Bay 1 Stop",
-          "400974*3386  20 Mar"
+          "400974*3386 20 Mar"
         ],
         "amount": -304.9,
         "balance": 1785.47,
@@ -1531,7 +1531,7 @@
         "description": [
           "Chq Card Fuel Purchase",
           "Waves At The Wilder",
-          "400974*3386  18 Mar"
+          "400974*3386 18 Mar"
         ],
         "amount": -360.91,
         "balance": 1424.56,
@@ -1542,7 +1542,7 @@
         "description": [
           "Chq Card Fuel Purchase",
           "Cltx Pe Convenience",
-          "400974*3386  18 Mar"
+          "400974*3386 18 Mar"
         ],
         "amount": -402.26,
         "balance": 1022.3,
@@ -1553,7 +1553,7 @@
         "description": [
           "Chq Card Fuel Purchase",
           "C*petroport Tsitsik",
-          "400974*3386  20 Mar"
+          "400974*3386 20 Mar"
         ],
         "amount": -529.55,
         "balance": 492.75,
@@ -1574,7 +1574,7 @@
         "description": [
           "POS Purchase Chq Card",
           "Peregrine Farm Stal",
-          "400974*3386  20 Mar"
+          "400974*3386 20 Mar"
         ],
         "amount": -106.45,
         "balance": 374.3,
@@ -1594,7 +1594,7 @@
         "date": "2016-03-24T00:00:00.000Z",
         "description": [
           "Naedo Collection",
-          "Boodle    300761-3805309160318"
+          "Boodle 300761-3805309160318"
         ],
         "amount": -4058.52,
         "balance": 5170.89,
@@ -1636,7 +1636,7 @@
         "description": [
           "POS Purchase Chq Card",
           "BP King",
-          "400974*3386  20 Mar"
+          "400974*3386 20 Mar"
         ],
         "amount": -53.5,
         "balance": 4842.39,
@@ -1658,7 +1658,7 @@
         "description": [
           "Chq Card Fuel Purchase",
           "C*total Obsevatory",
-          "400974*3386  24 Mar"
+          "400974*3386 24 Mar"
         ],
         "amount": -200,
         "balance": 4342.39,
@@ -1678,7 +1678,7 @@
         "date": "2016-03-28T00:00:00.000Z",
         "description": [
           "Chq Card ATM Local Cash Advanc",
-          "Cash  00600960005802",
+          "Cash 00600960005802",
           "74325636085000080094"
         ],
         "amount": -600,
@@ -1690,7 +1690,7 @@
         "description": [
           "POS International Purchase Chq",
           "Venntro Media Group",
-          "400974*3386  25 Mar"
+          "400974*3386 25 Mar"
         ],
         "amount": -245,
         "balance": 3469.06,
@@ -1710,7 +1710,7 @@
         "date": "2016-03-29T00:00:00.000Z",
         "description": [
           "Chq Card ATM Local Cash Advanc",
-          "Cash  00600960005802",
+          "Cash 00600960005802",
           "74325636086000140096"
         ],
         "amount": -600,
@@ -1732,7 +1732,7 @@
         "description": [
           "POS Purchase Chq Card",
           "C*vineyard Service",
-          "400974*3386  27 Mar"
+          "400974*3386 27 Mar"
         ],
         "amount": -419.7,
         "balance": 1530.02,
@@ -1743,7 +1743,7 @@
         "description": [
           "POS Purchase Chq Card",
           "C*vineyard Service",
-          "400974*3386  28 Mar"
+          "400974*3386 28 Mar"
         ],
         "amount": -451.5,
         "balance": 1078.52,
@@ -1754,7 +1754,7 @@
         "description": [
           "Chq Card Fuel Purchase",
           "C*total Obsevatory",
-          "400974*3386  27 Mar"
+          "400974*3386 27 Mar"
         ],
         "amount": -500,
         "balance": 578.52,
@@ -1805,7 +1805,7 @@
         "date": "2016-03-31T00:00:00.000Z",
         "description": [
           "Naedo Collection",
-          "Dimensionl25089288  Sage160331"
+          "Dimensionl25089288 Sage160331"
         ],
         "amount": -125,
         "balance": 5249.63,
@@ -1815,7 +1815,7 @@
         "date": "2016-03-31T00:00:00.000Z",
         "description": [
           "Magtape Debit",
-          "Mweb In   Internet:R7539093"
+          "Mweb In Internet:R7539093"
         ],
         "amount": -349,
         "balance": 4900.63,
@@ -1826,7 +1826,7 @@
         "description": [
           "POS Purchase Chq Card",
           "PnP Gardens",
-          "400974*3386  29 Mar"
+          "400974*3386 29 Mar"
         ],
         "amount": -37,
         "balance": 4863.63,
@@ -1837,7 +1837,7 @@
         "description": [
           "POS Purchase Chq Card",
           "Kloofnek Superette",
-          "400974*3386  26 Mar"
+          "400974*3386 26 Mar"
         ],
         "amount": -87,
         "balance": 4776.63,
@@ -1858,7 +1858,7 @@
         "description": [
           "Chq Card Fuel Purchase",
           "Total Observatory",
-          "400974*3386  26 Mar"
+          "400974*3386 26 Mar"
         ],
         "amount": -300,
         "balance": 4417.63,
@@ -1889,7 +1889,7 @@
         "date": "2016-04-01T00:00:00.000Z",
         "description": [
           "Magtape Debit",
-          "Intasure  Aps160400657   Vjoia"
+          "Intasure Aps160400657 Vjoia"
         ],
         "amount": -551.35,
         "balance": 2916.28,
@@ -1899,7 +1899,7 @@
         "date": "2016-04-01T00:00:00.000Z",
         "description": [
           "Magtape Debit",
-          "Intasure  Vntg/37977",
+          "Intasure Vntg/37977",
           "Vkudp"
         ],
         "amount": -1062,
@@ -1920,7 +1920,7 @@
         "date": "2016-04-01T00:00:00.000Z",
         "description": [
           "Magtape Debit",
-          "Momentum  01007590696   Xq9775"
+          "Momentum 01007590696 Xq9775"
         ],
         "amount": -2210,
         "balance": -1507.72,
@@ -1930,7 +1930,7 @@
         "date": "2016-04-01T00:00:00.000Z",
         "description": [
           "Chq Card ATM Local Cash Advanc",
-          "Cash  00600960005802",
+          "Cash 00600960005802",
           "74325636090000160001"
         ],
         "amount": -600,
@@ -1941,7 +1941,7 @@
         "date": "2016-04-01T00:00:00.000Z",
         "description": [
           "Magtape Debit",
-          "Tms ",
+          "Tms",
           "Health Ins E459574"
         ],
         "amount": -298,
@@ -1951,7 +1951,7 @@
       {
         "date": "2016-04-02T00:00:00.000Z",
         "description": [
-          "#Item Paid   Insufficient Fund",
+          "#Item Paid Insufficient Fund",
           "2 Items On 16/04/01"
         ],
         "amount": -125,
@@ -1963,7 +1963,7 @@
         "description": [
           "POS Purchase Chq Card",
           "C*j & M Famous Bilt",
-          "400974*3386  31 Mar"
+          "400974*3386 31 Mar"
         ],
         "amount": -42,
         "balance": -2572.72,
@@ -1974,7 +1974,7 @@
         "description": [
           "POS Purchase Chq Card",
           "Woolworths Gardens",
-          "400974*3386  31 Mar"
+          "400974*3386 31 Mar"
         ],
         "amount": -269.31,
         "balance": -2842.03,
@@ -1985,7 +1985,7 @@
         "description": [
           "POS Purchase Chq Card",
           "C*takumi Restaurant",
-          "400974*3386  31 Mar"
+          "400974*3386 31 Mar"
         ],
         "amount": -695,
         "balance": -3537.03,
@@ -1996,7 +1996,7 @@
         "description": [
           "Chq Card Fuel Purchase",
           "C*paddys Service St",
-          "400974*3386  31 Mar"
+          "400974*3386 31 Mar"
         ],
         "amount": -85,
         "balance": -3622.03,
@@ -2005,7 +2005,7 @@
       {
         "date": "2016-04-04T00:00:00.000Z",
         "description": [
-          "#Item Paid   Insufficient Fund",
+          "#Item Paid Insufficient Fund",
           "4 Items On 16/04/02"
         ],
         "amount": -200,
@@ -2027,7 +2027,7 @@
         "description": [
           "POS Purchase Chq Card",
           "C*kauai",
-          "400974*3386  01 Apr"
+          "400974*3386 01 Apr"
         ],
         "amount": -158,
         "balance": 4819.97,
@@ -2038,7 +2038,7 @@
         "description": [
           "POS Purchase Chq Card",
           "Lite-kem Pharmacy",
-          "400974*3386  31 Mar"
+          "400974*3386 31 Mar"
         ],
         "amount": -446.62,
         "balance": 4373.35,
@@ -2049,7 +2049,7 @@
         "description": [
           "POS Purchase Chq Card",
           "Copy Wizardz Garden",
-          "400974*3386  01 Apr"
+          "400974*3386 01 Apr"
         ],
         "amount": -500,
         "balance": 3873.35,
@@ -2060,7 +2060,7 @@
         "description": [
           "POS Purchase Chq Card",
           "C*ocean Basket Kloo",
-          "400974*3386  01 Apr"
+          "400974*3386 01 Apr"
         ],
         "amount": -565,
         "balance": 3308.35,
@@ -2071,7 +2071,7 @@
         "description": [
           "Chq Card Fuel Purchase",
           "C*paddys Service St",
-          "400974*3386  01 Apr"
+          "400974*3386 01 Apr"
         ],
         "amount": -43.2,
         "balance": 3265.15,
@@ -2102,7 +2102,7 @@
         "description": [
           "POS Purchase Chq Card",
           "Spring Sea",
-          "400974*3386  01 Apr"
+          "400974*3386 01 Apr"
         ],
         "amount": -69,
         "balance": 2316.81,
@@ -2112,7 +2112,7 @@
         "date": "2016-04-06T00:00:00.000Z",
         "description": [
           "Chq Card ATM Local Cash Advanc",
-          "Cash  00600960005802",
+          "Cash 00600960005802",
           "74325636095000110010"
         ],
         "amount": -600,
@@ -2124,7 +2124,7 @@
         "description": [
           "POS Purchase Chq Card",
           "Woolworths Palmyra",
-          "400974*3386  04 Apr"
+          "400974*3386 04 Apr"
         ],
         "amount": -72.99,
         "balance": 1643.82,
@@ -2135,7 +2135,7 @@
         "description": [
           "POS Purchase Chq Card",
           "Cuba Cigar Emporium",
-          "400974*3386  04 Apr"
+          "400974*3386 04 Apr"
         ],
         "amount": -93,
         "balance": 1550.82,
@@ -2146,7 +2146,7 @@
         "description": [
           "POS Purchase Chq Card",
           "C*urban Tails Palmy",
-          "400974*3386  04 Apr"
+          "400974*3386 04 Apr"
         ],
         "amount": -191,
         "balance": 1359.82,
@@ -2166,7 +2166,7 @@
         "date": "2016-04-07T00:00:00.000Z",
         "description": [
           "Magtape Debit",
-          "Momentum    210814353   Yn4374"
+          "Momentum 210814353 Yn4374"
         ],
         "amount": -1011.41,
         "balance": 9203.52,
@@ -2176,7 +2176,7 @@
         "date": "2016-04-07T00:00:00.000Z",
         "description": [
           "Chq Card ATM Local Cash Advanc",
-          "Cash  00600960005802",
+          "Cash 00600960005802",
           "74325636096000140012"
         ],
         "amount": -600,
@@ -2187,8 +2187,8 @@
         "date": "2016-04-07T00:00:00.000Z",
         "description": [
           "POS Purchase Chq Card",
-          "Hangklip Bottle   3",
-          "400974*3386  05 Apr"
+          "Hangklip Bottle 3",
+          "400974*3386 05 Apr"
         ],
         "amount": -160,
         "balance": 8443.52,
@@ -2199,7 +2199,7 @@
         "description": [
           "POS Purchase Chq Card",
           "Lemon And Lime Deli",
-          "400974*3386  05 Apr"
+          "400974*3386 05 Apr"
         ],
         "amount": -237.3,
         "balance": 8206.22,
@@ -2220,7 +2220,7 @@
         "date": "2016-04-09T00:00:00.000Z",
         "description": [
           "Chq Card ATM Local Cash Advanc",
-          "Cash  00600960005802",
+          "Cash 00600960005802",
           "74325636098000120014"
         ],
         "amount": -300,
@@ -2252,7 +2252,7 @@
         "date": "2016-04-11T00:00:00.000Z",
         "description": [
           "Chq Card ATM Local Cash Advanc",
-          "Cash  00600960005802",
+          "Cash 00600960005802",
           "74325636099000120015"
         ],
         "amount": -600,
@@ -2274,7 +2274,7 @@
         "description": [
           "Chq Card Fuel Purchase",
           "C*total Obsevatory",
-          "400974*3386  08 Apr"
+          "400974*3386 08 Apr"
         ],
         "amount": -48.85,
         "balance": 2277.48,
@@ -2295,7 +2295,7 @@
         "description": [
           "Chq Card Fuel Purchase",
           "C*total Tokai",
-          "400974*3386  10 Apr"
+          "400974*3386 10 Apr"
         ],
         "amount": -300,
         "balance": 1247.14,
@@ -2306,7 +2306,7 @@
         "description": [
           "POS Purchase Chq Card",
           "Pringle Bay Mini Ma",
-          "400974*3386  10 Apr"
+          "400974*3386 10 Apr"
         ],
         "amount": -82.5,
         "balance": 1164.64,
@@ -2317,7 +2317,7 @@
         "description": [
           "POS Purchase Chq Card",
           "Kloofnek Superette",
-          "400974*3386  10 Apr"
+          "400974*3386 10 Apr"
         ],
         "amount": -123.5,
         "balance": 1041.14,
@@ -2357,7 +2357,7 @@
         "date": "2016-04-15T00:00:00.000Z",
         "description": [
           "Magtape Debit",
-          "M-choice  M-choice15561738"
+          "M-choice M-choice15561738"
         ],
         "amount": -1350,
         "balance": -818.36,
@@ -2366,7 +2366,7 @@
       {
         "date": "2016-04-16T00:00:00.000Z",
         "description": [
-          "#Item Paid   Insufficient Fund",
+          "#Item Paid Insufficient Fund",
           "1 Items On 16/04/15"
         ],
         "amount": -75,
@@ -2524,7 +2524,6 @@
       }
     ],
     "valid": true,
-    "breaks": [],
-    "authenticity": "original"
+    "breaks": []
   }
 }

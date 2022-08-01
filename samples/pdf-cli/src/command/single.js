@@ -71,7 +71,7 @@ async function processSinglePdf({ file, password, writeOutputJson, writeOutputCs
 
 async function requestPdf(token, pdfPath, pass) {
   try {
-    return await StatementsApi.pdf.request(token, pdfPath, pass);
+    return await StatementsApi.pdf.request1(token, pdfPath, pass);
   } catch (e) {
     if (e instanceof StatementsApi.PdfTooLargeError) {
       output.red("Error: the pdf is too large:", pdfPath);

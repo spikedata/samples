@@ -9,8 +9,8 @@ interface RunInputs {
 async function run(i: RunInputs) {
   try {
     // request
-    console.log(`requesting ${StatementsApi.constants.url} ...`);
-    const spikeResponse = await StatementsApi.pdf.request(i.TOKEN, i.FILE, i.PASS);
+    console.log(`requesting ${StatementsApi.constants.host}${StatementsApi.constants.Endpoint.pdf2} ...`);
+    const spikeResponse = await StatementsApi.pdf.request2(i.TOKEN, i.FILE, i.PASS);
 
     // process response
     if (spikeResponse.type === StatementsApi.constants.TYPES.SUCCESS) {

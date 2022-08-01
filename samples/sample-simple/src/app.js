@@ -5,7 +5,7 @@ async function run({ TOKEN, FILE, PASS }) {
   try {
     // request
     console.log(`requesting ${StatementsApi.constants.url} ...`);
-    const spikeResponse = await StatementsApi.pdf.request(TOKEN, FILE, PASS);
+    const spikeResponse = await StatementsApi.pdf.request2(TOKEN, FILE, PASS);
 
     // NOTE:
     // - the .js sample does not benefit from typechecking
