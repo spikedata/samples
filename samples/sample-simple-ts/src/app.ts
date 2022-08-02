@@ -1,5 +1,6 @@
 import config from "./config";
 import * as StatementsApi from "@spike/api-statements";
+import { AxiosError } from "axios";
 
 interface RunInputs {
   TOKEN: string;
@@ -18,24 +19,11 @@ async function run(i: RunInputs) {
       console.log("SUCCESS");
 
       // cast spikeResponse in order to get intellisense
-      const success = spikeResponse as StatementsApi.response.PdfSuccessResponse;
-      switch (success.data.type) {
-        case StatementsApi.response.PdfDataType.BankStatementNoBalance:
-        case StatementsApi.response.PdfDataType.BankStatementNormal:
-        case StatementsApi.response.PdfDataType.CreditCardSimple:
-        case StatementsApi.response.PdfDataType.CreditCardBreakdown:
-          // typescript has control flow analysis: so intellisense knows that success.data.statement is StatementInfo | CreditCardStatementInfo here
-          console.log("accountHolder:", success.data.statement.nameAddress);
-          break;
-        case StatementsApi.response.PdfDataType.CreditCardBreakdownMultiUser:
-          // typescript has control flow analysis: so intellisense knows that success.data is a CreditCardBreakdownMultiUser here
-          for (let i = 0; i < success.data.all.length; ++i) {
-            console.log(`accountHolder ${i}:`, success.data.all[i].statement.nameAddress);
-          }
-          break;
-      }
+      const success = spikeResponse as StatementsApi.response.PdfSuccessCommonResponse;
+      console.log("accountHolder:", success.data.statement.nameAddress);
+      console.table(success.data.transactions);
     } else {
-      console.error("ERROR:", StatementsApi.constants.TYPES[spikeResponse.type] + ":" + spikeResponse.code);
+      console.error("ERROR:", spikeResponse.code);
       // cast spikeResponse in order to get intellisense
       const error = spikeResponse as StatementsApi.response.PdfErrorResponse;
       console.error("BLAME:", StatementsApi.constants.BLAME[error.blame]);
@@ -46,14 +34,15 @@ async function run(i: RunInputs) {
     } else if (e instanceof StatementsApi.InputValidationError) {
       console.error("EXCEPTION: invalid inputs:\n ", e.validationErrors.join("\n "));
     } else {
-      if (!e.response) {
+      const ex = e as AxiosError;
+      if (!ex.response) {
         // net connection error (e.g. down, timeout) or > axios maxBodyLength limit
         // e : AxiosResponse
-        console.error("EXCEPTION: net connection error:", e.code || e.message);
+        console.error("EXCEPTION: net connection error:", ex.code || ex.message);
       } else {
         // http status error (e.g. 500 internal server error, 413 too big)
         // e : AxiosResponse
-        console.error("EXCEPTION: http status error:", e.response.status, e.response.statusText);
+        console.error("EXCEPTION: http status error:", ex.response.status, ex.response.statusText);
       }
     }
   }
