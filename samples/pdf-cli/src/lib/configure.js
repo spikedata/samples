@@ -13,7 +13,7 @@ function getConfigPath() {
 }
 
 // let jwksUri = "http://127.0.0.1:8080/jwks.json"
-let jwksUri = "https://app.spikedata.co.za/.well-known/jwks.json";
+let jwksUri = "https://jwt.spikedata.co.za/.well-known/jwks.json";
 
 exports.init = function (config, inputs) {
   jwksUri = inputs.jwksUri || config.jwksUri;

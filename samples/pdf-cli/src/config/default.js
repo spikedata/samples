@@ -39,5 +39,5 @@ module.exports = {
     quiet: false,
   },
 
-  jwksUri: "https://app.spikedata.co.za/.well-known/jwks.json",
+  jwksUri: "https://jwt.spikedata.co.za/.well-known/jwks.json",
 };
