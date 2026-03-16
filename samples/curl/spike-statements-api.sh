@@ -5,7 +5,7 @@
 #
 set -e # Exit immediately if a command exits with a non-zero status
 
-FULLSCRIPTPATH=$(readlink --canonicalize $0) # full path, in case ./script.sh used
+FULLSCRIPTPATH=$(realpath $0) # full path, in case ./script.sh used
 BASEDIR=$(dirname $FULLSCRIPTPATH)
 YELLOW='\033[1;33m'
 CYAN='\033[0;36m'

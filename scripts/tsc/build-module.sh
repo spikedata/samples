@@ -17,7 +17,7 @@ then
   exit -1
 fi
 
-FULLSCRIPTPATH=$(readlink --canonicalize $0) # full path, in case ./script.sh used
+FULLSCRIPTPATH=$(realpath $0) # full path, in case ./script.sh used
 MONOREPOROOT=$(dirname $(dirname $(dirname $FULLSCRIPTPATH)))
 PKGDIR=$1
 

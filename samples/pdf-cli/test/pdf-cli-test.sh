@@ -5,7 +5,7 @@ SPIKE_ROOT_PUB=$SPIKE_ROOT/samples
 PDF_CLI_PROCESS_ALL=$SPIKE_ROOT_PUB/samples/pdf-cli/test/scripts/process-all-test.sh
 GIT_CHECK_CHANGES=$SPIKE_ROOT_PRIV/scripts/git/git-check-error-if-changes.sh
 
-FULLSCRIPTPATH=$(readlink --canonicalize $0) # full path, in case ./script.sh used
+FULLSCRIPTPATH=$(realpath $0) # full path, in case ./script.sh used
 BASEDIR=$(dirname $FULLSCRIPTPATH)
 
 YELLOW='\033[1;33m'

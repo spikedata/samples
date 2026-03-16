@@ -2,7 +2,7 @@
 set -e # Exit immediately if a command exits with a non-zero status
 set -x # echo on
 
-FULLSCRIPTPATH=$(readlink --canonicalize $0) # full path, in case ./script.sh used
+FULLSCRIPTPATH=$(realpath $0) # full path, in case ./script.sh used
 WORKSPACE_DIR=$(dirname $FULLSCRIPTPATH)
 SCRIPTS_DIR=$(dirname $WORKSPACE_DIR)
 MONOREPO_ROOT=$(dirname $SCRIPTS_DIR)

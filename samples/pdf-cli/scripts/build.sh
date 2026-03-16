@@ -1,5 +1,5 @@
 #!/bin/bash
-FULLSCRIPTPATH=$(readlink --canonicalize $0) # full path, in case ./script.sh used
+FULLSCRIPTPATH=$(realpath $0) # full path, in case ./script.sh used
 BASEDIR=$(dirname $FULLSCRIPTPATH)
 
 cd $BASEDIR/..
