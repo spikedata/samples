@@ -1,0 +1,1471 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Spike Statements API",
+    "description": "# Introduction\n\nSpike offers a number of APIs that provide open-banking equivalent capabilities for South African banks like ABSA, Capitec, FNB, Nedbank, RMB, and Standard Bank.\n\nThe Spike Statements API provides you with capabilities to extract data from pdf bank statements. Pdfs are [difficult](https://docs.spikedata.co.za/articles/why-pdfs-are-hard-to-process/) for machines to process. Spike solves this problem by extracting structured data from a pdf - data like transactions, and account holder info.\n\nThis API allows you to integrate statement processing capabilities directly into your own software. If you simply need to extract transactions from a pdf into excel then you can use our online [pdf converter](https://docs.spikedata.co.za/user-guides/app/web-converter/) without needing to write any code.\n\nStatement processing is used by our clients to assist with accounting, lending, and personal financial management operations.\n\nThis guide is part of a suite of [technical resources](https://docs.spikedata.co.za/#api-resources) which we provide in order to help developers make use of the Spike API.\n\n## Table of contents\n\nTo get you up to speed with the Spike Statements API we provide the following resources:\n\n- [Postman extensions](#postman-extensions)\n  - we've used various tricks in order to help you get the most out of postman\n- [Specifications](#specifications)\n  - We provide technical specifications for all endpoints using the two most widely adopted REST-ful API definition systems: [openapi](https://swagger.io/specification/) and [postman](https://www.postman.com/)\n- [Developer guide](#developer-guide)\n  - These guides provide guided walkthroughs and overviews of important features and concepts\n- [Errors](#errors)\n  - A note on the manner in which errors are returned by the Spike API\n- [Libraries](#libraries)\n  - For those that want type safety and other embellishments we support a range of language specific libraries to access the Spike API. This is entirely optional.\n- [Samples](#samples)\n  - For those who like to learn by doing we provide full-source code for a range of sample applications that make use of the Spike API.\n- [Support](#support)\n  - If you get stuck we're on hand to assist\n- [Testing sandbox](#testing-sandbox)\n  - To query the Spike API during testing.\n\n## Postman\n\nSee our [postman article](https://docs.spikedata.co.za/articles/postman/) for a number of tricks and techniques which will help you get the most out of this postman collection.\n\nFor example - here's how you can enter the required inputs for the `/pdf` function:\n\n```sh\n# file\nbase64 -w 0 /path/to/your.pdf | xclip -selection clipboard\n# the base64 pdf has been copied to your clipboard - you can now paste it into the appropriate parameter or body in Postman\n\n# token\ncat /path/to/your/token | xclip -selection clipboard\n# the token has been copied to your clipboard - you can now paste it into the appropriate authorization parameter in Postman\n```\n\n## Specifications\n\nWe provide technical specifications for all endpoints using the two most widely adopted REST-ful API definition systems:\n\n### OpenApi\n\n[OpenApi](https://swagger.io/specification/) (formerly Swagger) defines all inputs and outputs from each function[^diff] along with examples of these inputs and outputs. Each function definition is contained within a single .json (or .yaml) file. This json can be used for automatic client code generation but this is typically overkill, it's primarily useful as a reference document (e.g. to see all possible response shapes and to define any enumeration values).\n\n[^diff]: OpenApi differs from Postman - there is a definition file **per-function** whereas Postman has a definition for a **collection** of related functions.\n\nSee the [openapi specs](https://docs.spikedata.co.za/api/) on the Spike Documentation site.\n\n### Postman\n\nThe guide that you are currently reading.\n\n## Developer guide\n\nThe [quick start for new developers](https://docs.spikedata.co.za/developer-guide/quick-start-for-new-devs/README.md) provides the shortest path to getting up and running for new devs.\n\nOur full [developer guide](https://docs.spikedata.co.za/developer-guide/) provides guided walkthroughs of how to make a request and how to process the response - as well as guides to describe features like [authenticity](https://docs.spikedata.co.za/product/authenticity/)\n\n**NOTE:** The specs are updated by an automated process from the source code and hence are the most accurate. If there is a discrepancy between the developer guide and the specs, then consider the specs to be the authoritative source.\n\n## Authorization\n\nBefore you make a query to the Spike API you will need an API token. See the [authorization guide](https://docs.spikedata.co.za/developer-guide/authorization/).\n\n**WARNING**: Never share your tokens with anyone. If your token is used to query the Spike API then this will be billed to your account.\n\n## Errors\n\nSpike returns json objects for all responses. We do not use http status codes - all responses successes and errors will be `HTTP Status Code 200`. The way that you distinguish a success response from an error response is via `.type` field in the response object.\n\nThere are some cases where you will see a non-200 http status code. This includes all normal network connectivity issues (like `401 Unauthorized`, `408 Request Timeout`, `522 Connection Timed Out` etc...) which prevent the request from being received by Spike, or when your request triggers an underlying restriction that is imposed by the cloud hosting infrastructure upon which we host our service. We highlight the following http errors:\n\n| http status code | http status text      | when it may occur                                                                                                                                                                                                                                   |\n| ---------------- | --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| 413              | Payload too large     | You may see this error if you attempt to upload a very large pdf. This limit comes from our hosting provider: the [maximum payload size](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html) for an AWS Lambda request is 6MB. |\n| 500              | Internal Server Error | This is very rare. It would indicate an unhandled exception on our servers. Please report this using the [support](#support) channel below.                                                                                                         |\n\n## Libraries\n\nIn order to provide a quicker more typesafe path for developers to make use of the Spike API, we have developed request wrapper libraries for specific programming languages.\n\nUsing our libraries is entirely optional - you're free to use any request library (e.g. axios, request, node-fetch) that you like and manually construct the request payload yourself.\n\nSee the list of [officially supported languages](https://docs.spikedata.co.za/developer-guide/libs/).\n\n## Samples\n\nSpike provides various sample apps which you can use as demonstrations of how to use the Spike API. These can all be found in the [samples repo](https://github.com/spikedata/samples). See the README in that repo for a table of samples.\n\n## Support\n\nPlease see the [support guide](https://docs.spikedata.co.za/product/support/) to find out how to contact us.\n\n## Testing sandbox\n\nSpike provides a test endpoint `/pdf2test`:\n\n- this accepts the same inputs as the `/pdf2` endpoint but is free to use\n- it is limited in the following ways: (1) it only returns the first 10 transactions in each pdf (2) it is not monitored by our support system\n\nNote: the sandbox response is limited in various ways in order to ensure that it is not used by production code.",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.spikedata.co.za/",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/pdf2": {
+      "post": {
+        "summary": "Parse a pdf statement and return transactions and account holder info",
+        "description": "",
+        "operationId": "pdf",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/inputs-pdf"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "see schemas: outputs-*",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/outputs-pdf-success-statement-common"
+                    },
+                    {
+                      "$ref": "#/components/schemas/outputs-error-common-access-exceeded-max-concurrent-requests"
+                    },
+                    {
+                      "$ref": "#/components/schemas/outputs-error-common-access-insufficient-credit"
+                    },
+                    {
+                      "$ref": "#/components/schemas/outputs-error-common-dev-authorization"
+                    },
+                    {
+                      "$ref": "#/components/schemas/outputs-error-common-dev-invalid-inputs"
+                    },
+                    {
+                      "$ref": "#/components/schemas/outputs-error-common-exception"
+                    },
+                    {
+                      "$ref": "#/components/schemas/outputs-pdf-fail-auto-detect"
+                    },
+                    {
+                      "$ref": "#/components/schemas/outputs-pdf-fail-extract-failed"
+                    },
+                    {
+                      "$ref": "#/components/schemas/outputs-pdf-fail-failed-to-extract-statement-date"
+                    },
+                    {
+                      "$ref": "#/components/schemas/outputs-pdf-fail-image-pdf"
+                    },
+                    {
+                      "$ref": "#/components/schemas/outputs-pdf-fail-invalid-data-extracted"
+                    },
+                    {
+                      "$ref": "#/components/schemas/outputs-pdf-fail-invalid-pdf"
+                    },
+                    {
+                      "$ref": "#/components/schemas/outputs-pdf-fail-join-transactions-failed"
+                    },
+                    {
+                      "$ref": "#/components/schemas/outputs-pdf-fail-multiple-matching-parsers"
+                    },
+                    {
+                      "$ref": "#/components/schemas/outputs-pdf-fail-ocr-failed"
+                    },
+                    {
+                      "$ref": "#/components/schemas/outputs-pdf-fail-password-incorrect"
+                    },
+                    {
+                      "$ref": "#/components/schemas/outputs-pdf-fail-password-required"
+                    },
+                    {
+                      "$ref": "#/components/schemas/outputs-pdf-fail-unknown-exception"
+                    },
+                    {
+                      "$ref": "#/components/schemas/outputs-pdf-fail-unknown-pdf"
+                    },
+                    {
+                      "$ref": "#/components/schemas/outputs-pdf-fail-unsupported-pdf"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "inputs-pdf": {
+        "type": "object",
+        "properties": {
+          "file": {
+            "type": "string"
+          },
+          "pass": {
+            "type": "string"
+          },
+          "buffer": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "file",
+          "buffer"
+        ],
+        "example": {
+          "file": "absa.pdf",
+          "buffer": "JVBER...",
+          "pass": "password"
+        }
+      },
+      "outputs-nested--statement-info": {
+        "type": "object",
+        "properties": {
+          "bank": {
+            "type": "string",
+            "enum": [
+              "ABS",
+              "ACC",
+              "AFR",
+              "ALB",
+              "BID",
+              "BZR",
+              "CAP",
+              "DEA",
+              "DIS",
+              "EZA",
+              "FNB",
+              "GRO",
+              "HBZ",
+              "HPA",
+              "INV",
+              "MRC",
+              "NED",
+              "OML",
+              "RMB",
+              "SAS",
+              "STD",
+              "TYM"
+            ]
+          },
+          "accountNumber": {
+            "type": "string"
+          },
+          "nameAddress": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "dates": {
+            "type": "object",
+            "properties": {
+              "issuedOn": {
+                "format": "date-time",
+                "type": "string"
+              },
+              "from": {
+                "format": "date-time",
+                "type": "string"
+              },
+              "to": {
+                "format": "date-time",
+                "type": "string"
+              }
+            },
+            "required": [
+              "from",
+              "to"
+            ]
+          },
+          "accountType": {
+            "type": "string"
+          },
+          "statementNumber": {
+            "type": "string"
+          },
+          "openingBalance": {
+            "type": "number"
+          },
+          "closingBalance": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "bank",
+          "nameAddress",
+          "dates"
+        ]
+      },
+      "outputs-pdf-success-statement-common": {
+        "type": "object",
+        "properties": {
+          "requestId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "code": {
+            "type": "string",
+            "enum": [
+              "pdf/success/statement-common"
+            ]
+          },
+          "type": {
+            "type": "integer",
+            "enum": [
+              2
+            ]
+          },
+          "data": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "BankStatementNoBalance",
+                  "BankStatementNormal",
+                  "CreditCardBreakdown",
+                  "CreditCardBreakdownMultiUser",
+                  "CreditCardSimple"
+                ]
+              },
+              "parser": {
+                "type": "string",
+                "enum": [
+                  "ABSA_ACTIVESAVE_ALL_0",
+                  "ABSA_CHEQUEACCOUNT_EMAIL_0",
+                  "ABSA_CHEQUEACCOUNT_WEB_0",
+                  "ABSA_ENQUIRY",
+                  "ABSA_ENQUIRY_2",
+                  "ABSA_ESTATEMENT_WEB_0",
+                  "ABSA_TERMINAL",
+                  "ABSA_TERMINAL_1",
+                  "AFRICANBANK_1",
+                  "ACCESS1",
+                  "ALBARAKA_1",
+                  "ALBARAKA_2",
+                  "ALBARAKA_3",
+                  "ALBARAKA_MONTHLYSTATEMENT",
+                  "BANKZERO1",
+                  "BIDVEST_6",
+                  "BIDVEST_7",
+                  "BIDVEST_8",
+                  "BIDVEST_BUSINESS_EMAIL_0",
+                  "BIDVEST_BUSINESS_EMAIL_201902",
+                  "BIDVEST_BUSINESS_GPO_EMAIL",
+                  "BIDVEST_BUSINESS_GPO_EMAIL_2",
+                  "BIDVEST_BUSINESS_INTERIM_STATE_0",
+                  "BIDVEST_BUSINESS_WEB_0",
+                  "BIDVEST_BUSINESSDEBITCARD_EMAIL_0",
+                  "BIDVEST_INTERIM",
+                  "BIDVEST_PERSONAL",
+                  "EZAGA_1",
+                  "CAPITEC_1",
+                  "CAPITEC_3",
+                  "CAPITEC_ACCESSFACILITY_1",
+                  "CAPITEC_ESTATEMENT_WEB_0",
+                  "CAPITEC_ESTATEMENT_WEB_1",
+                  "CAPITEC_MAIN_0",
+                  "CAPITEC_MERCANTILE_1",
+                  "CAPITEC_MERCANTILE_2",
+                  "CAPITEC_PROVISIONAL_1",
+                  "DEA_ALL_0",
+                  "DISCOVERY_TRAN_ACC_0",
+                  "FNB_6",
+                  "FNB_8",
+                  "FNB_FLEXI_ALL_0",
+                  "FNB_INTERIM_STATEMENT_WEB_0",
+                  "FNB_INTERIM2_0",
+                  "FNB_RECREATED_1",
+                  "FNB_RETAIL_ALL_0",
+                  "FNB_TRANSACTION_HISTORY_WEB_PRINT",
+                  "FNB_TRANSACTIONHISTORYDOWNLOAD_WEB_0",
+                  "GROBANK1",
+                  "HELLOPAISA_1",
+                  "HELLOPAISA_2",
+                  "INVESTEC_2",
+                  "INVESTEC_3",
+                  "INVESTEC_4",
+                  "INVESTEC_5",
+                  "INVESTEC_6",
+                  "INVESTEC_7",
+                  "INVESTEC_BANKACCOUNT",
+                  "INVESTEC_CALLACCOUNT",
+                  "INVESTEC_CALLACCOUNT_2",
+                  "MERCANTILE1",
+                  "MERCANTILE2",
+                  "MERCANTILE3",
+                  "NEDBANK_ALL_EMAIL_0",
+                  "NEDBANK_ALL_EMAIL_201711",
+                  "NEDBANK_BUSINESS",
+                  "NEDBANK_BUSINESS_201911",
+                  "NEDBANK_CALL_1",
+                  "NEDBANK_COMCORP_0",
+                  "NEDBANK_ESTATEMENT_WEB_0",
+                  "NEDBANK_MFC",
+                  "NEDBANK_PROVISIONAL_STATEMENT_WEB_0",
+                  "NEDBANK_PROVISIONAL_STATEMENT_WEB_1",
+                  "NEDBANK8",
+                  "NEDBANK9",
+                  "NEDBANK10",
+                  "NEDBANK11",
+                  "NEDBANK12",
+                  "NEDBANK13",
+                  "NEDBANK14",
+                  "NEDBANK15",
+                  "OLDMUTUAL_MONEY_0",
+                  "OLDMUTUAL_MONEY_1",
+                  "RMB_RETAIL_ALL_0",
+                  "RMB_TRANSACTIONHISTORYDOWNLOAD_WEB_0",
+                  "SASFIN",
+                  "SASFIN2",
+                  "SASFIN3",
+                  "STANDARDBANK_ALL_EMAIL_0",
+                  "STANDARDBANK_ALL_EMAIL_1",
+                  "STANDARDBANK_CALLACCOUNT_1",
+                  "STANDARDBANK_CALLDEPOSIT_1",
+                  "STANDARDBANK_COPYSTATEMENT",
+                  "STANDARDBANK_CURRENTACCOUNT",
+                  "STANDARDBANK_CUSTOMSTATEMENT_WEB_0",
+                  "STANDARDBANK_ESTATEMENT_WEB_0",
+                  "STANDARDBANK_FOREX_1",
+                  "STANDARDBANK_HOMELOAN_1",
+                  "STANDARDBANK_SAVINGSACCOUNT",
+                  "STANDARDBANK_STATEMENT2",
+                  "STANDARDBANK_STATEMENT3",
+                  "STANDARDBANK_STATEMENT4",
+                  "STANDARDBANK_STATEMENT6",
+                  "STANDARDBANK_STATEMENT7",
+                  "STANDARDBANK_STRIATA_0",
+                  "STANDARDBANK_THRIVE_0",
+                  "TYME",
+                  "ABSA_CHARGES",
+                  "ABSA_ESTATEMENT_NB_0",
+                  "CAPITEC_MERCHANT_STATEMENT_0",
+                  "DISCOVERY_DEBIT_0",
+                  "FNB_7",
+                  "HBZBANK_1",
+                  "NEDBANK_ACCBAL_WEB",
+                  "STANDARDBANK_INVOICE1",
+                  "STANDARDBANK_STATEMENT5",
+                  "ABSA_CREDITCARD_EMAIL_0",
+                  "NEDBANK_CREDITCARD",
+                  "STANDARDBANK_CREDITCARD",
+                  "ABSA_ESTATEMENT_CC_0",
+                  "CAPITEC_CREDITCARD_0",
+                  "DISCOVERY_CREDITCARD_1",
+                  "DISCOVERY_CREDITCARD_ALL_0",
+                  "DISCOVERY_CREDITCARD_ALL_1",
+                  "FNB_CREDITCARD_ALL_0",
+                  "RMB_CREDITCARD_ALL_0",
+                  "TYME_CREDITCARD_0"
+                ]
+              },
+              "statement": {
+                "$ref": "#/components/schemas/outputs-nested--statement-info"
+              },
+              "transactions": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "date": {
+                      "format": "date-time",
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "amount": {
+                      "type": "number"
+                    },
+                    "balance": {
+                      "type": "number"
+                    },
+                    "category": {
+                      "type": "string"
+                    },
+                    "processDate": {
+                      "format": "date-time",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "date",
+                    "description"
+                  ]
+                }
+              },
+              "numBreaks": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "type",
+              "parser",
+              "statement",
+              "transactions"
+            ]
+          },
+          "score": {
+            "type": "number",
+            "description": "Confidence score for the parsing result"
+          },
+          "authenticity": {
+            "type": "string",
+            "description": "Indicates the authenticity status of the PDF document",
+            "enum": [
+              "original",
+              "modified",
+              "unknown"
+            ]
+          },
+          "creditBalance": {
+            "type": "number",
+            "description": "The credit balance change resulting from this API call"
+          },
+          "creditsDeducted": {
+            "type": "number",
+            "description": "The number of credits deducted for this API call"
+          }
+        },
+        "required": [
+          "requestId",
+          "code",
+          "type",
+          "data",
+          "score",
+          "authenticity",
+          "creditBalance",
+          "creditsDeducted"
+        ],
+        "example": {
+          "success": {
+            "requestId": "00000000-0000-4000-a000-000000000001",
+            "code": "pdf/success/statement-common",
+            "type": 2,
+            "data": {
+              "type": "BankStatementNoBalance",
+              "parser": "NEDBANK_ACCBAL_WEB",
+              "statement": {
+                "bank": "ABS",
+                "accountNumber": "9017446437",
+                "nameAddress": [
+                  "Mr. J Smith",
+                  "10 Main Road",
+                  "Cape Town",
+                  "8001"
+                ],
+                "dates": {
+                  "issuedOn": "2018-09-02T00:00:00.000Z",
+                  "from": "2018-08-01T00:00:00.000Z",
+                  "to": "2018-08-31T00:00:00.000Z"
+                },
+                "accountType": "Gold Business Account",
+                "statementNumber": "00",
+                "openingBalance": -100,
+                "closingBalance": -200
+              },
+              "transactions": [
+                {
+                  "id": 1,
+                  "date": "2017-09-12T00:00:00.000Z",
+                  "description": [
+                    "Deposit"
+                  ],
+                  "amount": 1600.01
+                },
+                {
+                  "id": 2,
+                  "date": "2017-09-12T00:00:00.000Z",
+                  "description": [
+                    "#Monthly Account Fee"
+                  ],
+                  "amount": -100
+                },
+                {
+                  "id": 3,
+                  "date": "2017-09-12T00:00:00.000Z",
+                  "description": [
+                    "Woolworths"
+                  ],
+                  "amount": -500
+                }
+              ]
+            },
+            "score": 1,
+            "authenticity": "original",
+            "creditBalance": -500,
+            "creditsDeducted": -1
+          },
+          "breaks": {
+            "requestId": "00000000-0000-4000-a000-000000000001",
+            "code": "pdf/success/statement-common",
+            "type": 2,
+            "data": {
+              "type": "BankStatementNoBalance",
+              "parser": "NEDBANK_ACCBAL_WEB",
+              "statement": {
+                "bank": "ABS",
+                "accountNumber": "9017446437",
+                "nameAddress": [
+                  "Mr. J Smith",
+                  "10 Main Road",
+                  "Cape Town",
+                  "8001"
+                ],
+                "dates": {
+                  "issuedOn": "2018-09-02T00:00:00.000Z",
+                  "from": "2018-08-01T00:00:00.000Z",
+                  "to": "2018-08-31T00:00:00.000Z"
+                },
+                "accountType": "Gold Business Account",
+                "statementNumber": "00",
+                "openingBalance": -100,
+                "closingBalance": -200
+              },
+              "transactions": [
+                {
+                  "id": 1,
+                  "date": "2017-09-12T00:00:00.000Z",
+                  "description": [
+                    "Deposit"
+                  ],
+                  "amount": 1600.01
+                },
+                {
+                  "id": 2,
+                  "date": "2017-09-12T00:00:00.000Z",
+                  "description": [
+                    "#Monthly Account Fee"
+                  ],
+                  "amount": -100
+                },
+                {
+                  "id": 3,
+                  "date": "2017-09-12T00:00:00.000Z",
+                  "description": [
+                    "Woolworths"
+                  ],
+                  "amount": -500
+                }
+              ],
+              "numBreaks": 1
+            },
+            "score": 0.85,
+            "authenticity": "original",
+            "creditBalance": -500,
+            "creditsDeducted": -1
+          }
+        }
+      },
+      "outputs-error-common-access-exceeded-max-concurrent-requests": {
+        "type": "object",
+        "properties": {
+          "requestId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "code": {
+            "type": "string",
+            "enum": [
+              "error/common/access/exceeded-max-concurrent-requests"
+            ]
+          },
+          "type": {
+            "type": "integer",
+            "enum": [
+              4
+            ]
+          },
+          "message": {
+            "type": "string"
+          },
+          "blame": {
+            "type": "string",
+            "enum": [
+              "CLIENT"
+            ]
+          }
+        },
+        "required": [
+          "requestId",
+          "code",
+          "type"
+        ],
+        "example": {
+          "requestId": "00000000-0000-4000-a000-000000000001",
+          "code": "error/common/access/exceeded-max-concurrent-requests",
+          "type": "CLIENT",
+          "blame": "too many active requests, try again later"
+        }
+      },
+      "outputs-error-common-access-insufficient-credit": {
+        "type": "object",
+        "properties": {
+          "requestId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "code": {
+            "type": "string",
+            "enum": [
+              "error/common/access/insufficient-credit"
+            ]
+          },
+          "type": {
+            "type": "integer",
+            "enum": [
+              4
+            ]
+          },
+          "message": {
+            "type": "string"
+          },
+          "blame": {
+            "type": "string",
+            "enum": [
+              "NOTSET"
+            ]
+          }
+        },
+        "required": [
+          "requestId",
+          "code",
+          "type"
+        ],
+        "example": {
+          "requestId": "00000000-0000-4000-a000-000000000001",
+          "code": "error/common/access/insufficient-credit",
+          "type": "NOTSET",
+          "blame": "please purchase more credits"
+        }
+      },
+      "outputs-error-common-dev-authorization": {
+        "type": "object",
+        "properties": {
+          "requestId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "code": {
+            "type": "string",
+            "enum": [
+              "error/common/dev/authorization"
+            ]
+          },
+          "type": {
+            "type": "integer",
+            "enum": [
+              4
+            ]
+          },
+          "message": {
+            "type": "string"
+          },
+          "blame": {
+            "type": "string",
+            "enum": [
+              "SPIKE"
+            ]
+          }
+        },
+        "required": [
+          "requestId",
+          "code",
+          "type"
+        ],
+        "example": {
+          "requestId": "00000000-0000-4000-a000-000000000001",
+          "code": "error/common/dev/authorization",
+          "type": "SPIKE",
+          "blame": "authorization error"
+        }
+      },
+      "outputs-error-common-dev-invalid-inputs": {
+        "type": "object",
+        "properties": {
+          "requestId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "code": {
+            "type": "string",
+            "enum": [
+              "error/common/dev/invalid-inputs"
+            ]
+          },
+          "type": {
+            "type": "integer",
+            "enum": [
+              4
+            ]
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1
+          },
+          "message": {
+            "type": "string"
+          },
+          "blame": {
+            "type": "string",
+            "enum": [
+              "CLIENT"
+            ]
+          }
+        },
+        "required": [
+          "requestId",
+          "code",
+          "type"
+        ],
+        "example": {
+          "requestId": "00000000-0000-4000-a000-000000000001",
+          "code": "error/common/dev/invalid-inputs",
+          "type": "CLIENT",
+          "blame": "incorrect inputs",
+          "message": [
+            "Request size limit of 6MB exceeded"
+          ]
+        }
+      },
+      "outputs-error-common-exception": {
+        "type": "object",
+        "properties": {
+          "requestId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "code": {
+            "type": "string",
+            "enum": [
+              "error/common/exception"
+            ]
+          },
+          "type": {
+            "type": "integer",
+            "enum": [
+              4
+            ]
+          },
+          "message": {
+            "type": "string"
+          },
+          "blame": {
+            "type": "string",
+            "enum": [
+              "SPIKE"
+            ]
+          }
+        },
+        "required": [
+          "requestId",
+          "code",
+          "type"
+        ],
+        "example": {
+          "requestId": "00000000-0000-4000-a000-000000000001",
+          "code": "error/common/exception",
+          "type": "SPIKE",
+          "blame": "an exception occurred"
+        }
+      },
+      "outputs-pdf-fail-auto-detect": {
+        "type": "object",
+        "properties": {
+          "requestId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "code": {
+            "type": "string",
+            "enum": [
+              "pdf/fail/auto-detect"
+            ]
+          },
+          "type": {
+            "type": "integer",
+            "enum": [
+              4
+            ]
+          },
+          "data": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "scan-rule-auto",
+                  "broken-utf16-auto",
+                  "broken-encoding-auto",
+                  "junk-rule-auto",
+                  "new-todo-rule-auto"
+                ]
+              },
+              "message": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "message": {
+            "type": "string"
+          },
+          "blame": {
+            "type": "string",
+            "enum": [
+              "CLIENT"
+            ]
+          }
+        },
+        "required": [
+          "requestId",
+          "code",
+          "type"
+        ],
+        "example": {
+          "scan": {
+            "requestId": "00000000-0000-4000-a000-000000000001",
+            "code": "pdf/fail/auto-detect",
+            "type": "CLIENT",
+            "blame": "the pdf matched a pattern which we don't process",
+            "message": {
+              "type": "scan-rule-auto",
+              "message": "has been scanned - meta data matched a known scanner - like Canon, Ricoh"
+            }
+          },
+          "utf16": {
+            "requestId": "00000000-0000-4000-a000-000000000001",
+            "code": "pdf/fail/auto-detect",
+            "type": "CLIENT",
+            "blame": "the pdf matched a pattern which we don't process",
+            "message": {
+              "type": "broken-utf16-auto",
+              "message": "the pdf has been modified and re-saved with utf16 encoding - we don't support this encoding"
+            }
+          },
+          "encoding": {
+            "requestId": "00000000-0000-4000-a000-000000000001",
+            "code": "pdf/fail/auto-detect",
+            "type": "CLIENT",
+            "blame": "the pdf matched a pattern which we don't process",
+            "message": {
+              "type": "broken-encoding-auto",
+              "message": "the pdf has been modified and re-saved with an unknown encoding - the text is unreadable"
+            }
+          },
+          "junk": {
+            "requestId": "00000000-0000-4000-a000-000000000001",
+            "code": "pdf/fail/auto-detect",
+            "type": "CLIENT",
+            "blame": "the pdf matched a pattern which we don't process",
+            "message": {
+              "type": "junk-rule-auto",
+              "message": "this matches a known pdf document which we see frequently and don't support - like Game Credit Statements, CIPC documents, IDs, etc..."
+            }
+          },
+          "newTodo": {
+            "requestId": "00000000-0000-4000-a000-000000000001",
+            "code": "pdf/fail/auto-detect",
+            "type": "CLIENT",
+            "blame": "the pdf matched a pattern which we don't process",
+            "message": {
+              "type": "new-todo-rule-auto",
+              "message": "Forthcoming feature - i.e. a new parser which we've identified but not yet had time to implement"
+            }
+          }
+        }
+      },
+      "outputs-pdf-fail-extract-failed": {
+        "type": "object",
+        "properties": {
+          "requestId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "code": {
+            "type": "string",
+            "enum": [
+              "pdf/fail/extract-failed"
+            ]
+          },
+          "type": {
+            "type": "integer",
+            "enum": [
+              4
+            ]
+          },
+          "message": {
+            "type": "string"
+          },
+          "blame": {
+            "type": "string",
+            "enum": [
+              "SPIKE"
+            ]
+          }
+        },
+        "required": [
+          "requestId",
+          "code",
+          "type"
+        ],
+        "example": {
+          "requestId": "00000000-0000-4000-a000-000000000001",
+          "code": "pdf/fail/extract-failed",
+          "type": "SPIKE",
+          "blame": "internal error - our pdf extraction library failed to extract text from the pdf"
+        }
+      },
+      "outputs-pdf-fail-failed-to-extract-statement-date": {
+        "type": "object",
+        "properties": {
+          "requestId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "code": {
+            "type": "string",
+            "enum": [
+              "pdf/fail/failed-to-extract-statement-date"
+            ]
+          },
+          "type": {
+            "type": "integer",
+            "enum": [
+              4
+            ]
+          },
+          "message": {
+            "type": "string"
+          },
+          "blame": {
+            "type": "string",
+            "enum": [
+              "SPIKE"
+            ]
+          }
+        },
+        "required": [
+          "requestId",
+          "code",
+          "type"
+        ],
+        "example": {
+          "requestId": "00000000-0000-4000-a000-000000000001",
+          "code": "pdf/fail/failed-to-extract-statement-date",
+          "type": "SPIKE",
+          "blame": "we need the statement date in order to determine the transaction date in a statement format which excludes the year from any dates"
+        }
+      },
+      "outputs-pdf-fail-image-pdf": {
+        "type": "object",
+        "properties": {
+          "requestId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "code": {
+            "type": "string",
+            "enum": [
+              "pdf/fail/image-pdf"
+            ]
+          },
+          "type": {
+            "type": "integer",
+            "enum": [
+              4
+            ]
+          },
+          "message": {
+            "type": "string"
+          },
+          "blame": {
+            "type": "string",
+            "enum": [
+              "CLIENT"
+            ]
+          }
+        },
+        "required": [
+          "requestId",
+          "code",
+          "type"
+        ],
+        "example": {
+          "requestId": "00000000-0000-4000-a000-000000000001",
+          "code": "pdf/fail/image-pdf",
+          "type": "CLIENT",
+          "blame": "PDF is image based not text based, and hence can't be parsed"
+        }
+      },
+      "outputs-pdf-fail-invalid-data-extracted": {
+        "type": "object",
+        "properties": {
+          "requestId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "code": {
+            "type": "string",
+            "enum": [
+              "pdf/fail/invalid-data-extracted"
+            ]
+          },
+          "type": {
+            "type": "integer",
+            "enum": [
+              4
+            ]
+          },
+          "message": {
+            "type": "string"
+          },
+          "blame": {
+            "type": "string",
+            "enum": [
+              "SPIKE"
+            ]
+          }
+        },
+        "required": [
+          "requestId",
+          "code",
+          "type"
+        ],
+        "example": {
+          "requestId": "00000000-0000-4000-a000-000000000001",
+          "code": "pdf/fail/invalid-data-extracted",
+          "type": "SPIKE",
+          "blame": "we successfully extract the data from the statement however it did not conform to the expected output schema"
+        }
+      },
+      "outputs-pdf-fail-invalid-pdf": {
+        "type": "object",
+        "properties": {
+          "requestId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "code": {
+            "type": "string",
+            "enum": [
+              "pdf/fail/invalid-pdf"
+            ]
+          },
+          "type": {
+            "type": "integer",
+            "enum": [
+              4
+            ]
+          },
+          "message": {
+            "type": "string"
+          },
+          "blame": {
+            "type": "string",
+            "enum": [
+              "SPIKE"
+            ]
+          }
+        },
+        "required": [
+          "requestId",
+          "code",
+          "type"
+        ],
+        "example": {
+          "requestId": "00000000-0000-4000-a000-000000000001",
+          "code": "pdf/fail/invalid-pdf",
+          "type": "SPIKE",
+          "blame": "the pdf does not have a valid structure"
+        }
+      },
+      "outputs-pdf-fail-join-transactions-failed": {
+        "type": "object",
+        "properties": {
+          "requestId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "code": {
+            "type": "string",
+            "enum": [
+              "pdf/fail/join-transactions-failed"
+            ]
+          },
+          "type": {
+            "type": "integer",
+            "enum": [
+              4
+            ]
+          },
+          "message": {
+            "type": "string"
+          },
+          "blame": {
+            "type": "string",
+            "enum": [
+              "SPIKE"
+            ]
+          }
+        },
+        "required": [
+          "requestId",
+          "code",
+          "type"
+        ],
+        "example": {
+          "requestId": "00000000-0000-4000-a000-000000000001",
+          "code": "pdf/fail/join-transactions-failed",
+          "type": "SPIKE",
+          "blame": "an inconsistency in the data prevented us from separating all of the transactions successfully"
+        }
+      },
+      "outputs-pdf-fail-multiple-matching-parsers": {
+        "type": "object",
+        "properties": {
+          "requestId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "code": {
+            "type": "string",
+            "enum": [
+              "pdf/fail/multiple-matching-parsers"
+            ]
+          },
+          "type": {
+            "type": "integer",
+            "enum": [
+              4
+            ]
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1
+          },
+          "message": {
+            "type": "string"
+          },
+          "blame": {
+            "type": "string",
+            "enum": [
+              "SPIKE"
+            ]
+          }
+        },
+        "required": [
+          "requestId",
+          "code",
+          "type"
+        ],
+        "example": {
+          "requestId": "00000000-0000-4000-a000-000000000001",
+          "code": "pdf/fail/multiple-matching-parsers",
+          "type": "SPIKE",
+          "blame": "two or more parsers were found which can process this pdf",
+          "message": [
+            "STANDARDBANK_STATEMENT2",
+            "STANDARDBANK_STATEMENT5"
+          ]
+        }
+      },
+      "outputs-pdf-fail-ocr-failed": {
+        "type": "object",
+        "properties": {
+          "requestId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "code": {
+            "type": "string",
+            "enum": [
+              "pdf/fail/ocr-failed"
+            ]
+          },
+          "type": {
+            "type": "integer",
+            "enum": [
+              4
+            ]
+          },
+          "message": {
+            "type": "string"
+          },
+          "blame": {
+            "type": "string",
+            "enum": [
+              "SPIKE"
+            ]
+          }
+        },
+        "required": [
+          "requestId",
+          "code",
+          "type"
+        ],
+        "example": {
+          "requestId": "00000000-0000-4000-a000-000000000001",
+          "code": "pdf/fail/ocr-failed",
+          "type": "SPIKE",
+          "blame": "ocr extraction failed"
+        }
+      },
+      "outputs-pdf-fail-password-incorrect": {
+        "type": "object",
+        "properties": {
+          "requestId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "code": {
+            "type": "string",
+            "enum": [
+              "pdf/fail/password-incorrect"
+            ]
+          },
+          "type": {
+            "type": "integer",
+            "enum": [
+              4
+            ]
+          },
+          "message": {
+            "type": "string"
+          },
+          "blame": {
+            "type": "string",
+            "enum": [
+              "USER"
+            ]
+          }
+        },
+        "required": [
+          "requestId",
+          "code",
+          "type"
+        ],
+        "example": {
+          "requestId": "00000000-0000-4000-a000-000000000001",
+          "code": "pdf/fail/password-incorrect",
+          "type": "USER",
+          "blame": "the password which you supplied failed to decrypt the pdf"
+        }
+      },
+      "outputs-pdf-fail-password-required": {
+        "type": "object",
+        "properties": {
+          "requestId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "code": {
+            "type": "string",
+            "enum": [
+              "pdf/fail/password-required"
+            ]
+          },
+          "type": {
+            "type": "integer",
+            "enum": [
+              4
+            ]
+          },
+          "message": {
+            "type": "string"
+          },
+          "blame": {
+            "type": "string",
+            "enum": [
+              "USER"
+            ]
+          }
+        },
+        "required": [
+          "requestId",
+          "code",
+          "type"
+        ],
+        "example": {
+          "requestId": "00000000-0000-4000-a000-000000000001",
+          "code": "pdf/fail/password-required",
+          "type": "USER",
+          "blame": "the pdf which you supplied is encrypted - you must supply a password"
+        }
+      },
+      "outputs-pdf-fail-unknown-exception": {
+        "type": "object",
+        "properties": {
+          "requestId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "code": {
+            "type": "string",
+            "enum": [
+              "pdf/fail/unknown-exception"
+            ]
+          },
+          "type": {
+            "type": "integer",
+            "enum": [
+              4
+            ]
+          },
+          "message": {
+            "type": "string"
+          },
+          "blame": {
+            "type": "string",
+            "enum": [
+              "SPIKE"
+            ]
+          }
+        },
+        "required": [
+          "requestId",
+          "code",
+          "type"
+        ],
+        "example": {
+          "requestId": "00000000-0000-4000-a000-000000000001",
+          "code": "pdf/fail/unknown-exception",
+          "type": "SPIKE",
+          "blame": "an unspecified exception occurred"
+        }
+      },
+      "outputs-pdf-fail-unknown-pdf": {
+        "type": "object",
+        "properties": {
+          "requestId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "code": {
+            "type": "string",
+            "enum": [
+              "pdf/fail/unknown-pdf"
+            ]
+          },
+          "type": {
+            "type": "integer",
+            "enum": [
+              4
+            ]
+          },
+          "message": {
+            "type": "string"
+          },
+          "blame": {
+            "type": "string",
+            "enum": [
+              "SPIKE"
+            ]
+          }
+        },
+        "required": [
+          "requestId",
+          "code",
+          "type"
+        ],
+        "example": {
+          "requestId": "00000000-0000-4000-a000-000000000001",
+          "code": "pdf/fail/unknown-pdf",
+          "type": "SPIKE",
+          "blame": "we did not recognise this pdf format"
+        }
+      },
+      "outputs-pdf-fail-unsupported-pdf": {
+        "type": "object",
+        "properties": {
+          "requestId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "code": {
+            "type": "string",
+            "enum": [
+              "pdf/fail/unsupported-pdf"
+            ]
+          },
+          "type": {
+            "type": "integer",
+            "enum": [
+              4
+            ]
+          },
+          "data": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "notes": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name"
+            ]
+          },
+          "message": {
+            "type": "string"
+          },
+          "blame": {
+            "type": "string",
+            "enum": [
+              "USER"
+            ]
+          }
+        },
+        "required": [
+          "requestId",
+          "code",
+          "type"
+        ],
+        "example": {
+          "requestId": "00000000-0000-4000-a000-000000000001",
+          "code": "pdf/fail/unsupported-pdf",
+          "type": "USER",
+          "blame": "text matched a known unsupported pdf format - like Africa Bank Loan Statements, Absa Investment Summaries, Bidvest Cardholder Statements, etc...",
+          "message": {
+            "name": "AFRICABANK_LOAN",
+            "notes": "Africa Bank Loan Statement"
+          }
+        }
+      }
+    }
+  }
+}
